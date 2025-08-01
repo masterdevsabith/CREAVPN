@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../ui/Button";
 
 const navlinks = [
   { label: "About Us", url: "#" },
@@ -9,12 +10,12 @@ const navlinks = [
 ];
 export default function Navbar() {
   return (
-    <header>
+    <header className="flex items-center justify-between px-12 py-12">
       <div className="left">
         <Image src={"/icons/logo.svg"} alt="logo" width={150} height={150} />
       </div>
-      <div className="mid">
-        <ul>
+      <div className="mid flex items-center justify-center">
+        <ul className="flex items-center gap-8">
           {navlinks.map((navlink, idx) => (
             <Link href={navlink.url} key={idx}>
               <li>{navlink.label}</li>
@@ -22,7 +23,9 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="right"></div>
+      <div className="right">
+        <Button content="Get Started" />
+      </div>
     </header>
   );
 }
