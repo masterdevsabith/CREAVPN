@@ -2,6 +2,8 @@ import Image from "next/image";
 import Navbar from "./components/includes/Navbar";
 import Hero from "./components/Hero";
 import Cards from "./components/Cards";
+import Companies from "./components/Companies";
+import SecureBrowsing from "./components/SecureBrowsing";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Cards />
+        <Companies />
+        <SecureBrowsing />
       </section>
     </main>
   );
