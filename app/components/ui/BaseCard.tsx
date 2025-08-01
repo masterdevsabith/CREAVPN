@@ -2,15 +2,19 @@ import { BaseCardProps } from "@/app/types/uiTypes";
 import { stat } from "fs";
 import { ArrowUpRight, Divide } from "lucide-react";
 import Image from "next/image";
+import Statusbar from "./Statusbar";
 
 export default function BaseCard({
   flag,
   location,
   cordinate,
   status,
+  classname,
 }: BaseCardProps) {
   return (
-    <div className="base_card border-2 border-neutral-500 rounded-3xl p-5 flex flex-col justify-between w-[31%] min-h-90">
+    <div
+      className={`base_card border-2 border-neutral-500 rounded-3xl p-5 flex flex-col justify-between   ${classname}`}
+    >
       <div className="top flex items-center justify-between">
         <div className="flag">
           <Image
@@ -27,11 +31,15 @@ export default function BaseCard({
       </div>
       <div className="bottom flex items-center justify-between">
         <div className="location_and_cordinates">
-          <h4>{location} </h4>
-          <p>{cordinate}</p>
+          <h4 className="text-2xl font-semibold">{location} </h4>
+          <p className="text-md text-neutral-400">{cordinate}</p>
         </div>
         <div className="status">
-          {status ? <div>Available</div> : <div>Not Available</div>}
+          {status ? (
+            <Statusbar content="Available" />
+          ) : (
+            <Statusbar content="Not Available" />
+          )}
         </div>
       </div>
     </div>

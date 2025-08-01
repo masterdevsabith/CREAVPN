@@ -16,4 +16,17 @@ export interface BaseCardProps {
   location: string;
   cordinate: string;
   status: boolean;
+  classname?: string;
+}
+
+export interface MainCardProps {
+  logo: string;
+  status: boolean;
+  time: string;
+  flag: string;
+  location: string;
+  cordinate: string;
+  download_speed: string;
+  upload_speed: string;
+  classname?: string;
 }

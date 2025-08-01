@@ -4,7 +4,7 @@ import Statusbar from "./ui/Statusbar";
 
 export default function Hero() {
   return (
-    <section className="hero_section w-full flex flex-col items-center py-12">
+    <section className="hero_section w-full flex flex-col items-center py-18">
       <div className="top text-center max-w-5xl flex flex-col items-center">
         <Statusbar
           content="CreaVPN version 2.0 is available"
