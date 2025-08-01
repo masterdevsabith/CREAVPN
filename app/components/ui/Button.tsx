@@ -1,10 +1,11 @@
 import { ButtonProps } from "@/app/types/uiTypes";
 
-export default function Button({ content, className }: ButtonProps) {
+export default function Button({ content, icon, className }: ButtonProps) {
   return (
     <button
-      className={`px-4 py-2 rounded-full font-medium  text-white border-2 border-neutral-400 transition duration-300 ${className}`}
+      className={`px-4 py-2 rounded-full font-medium  text-white border-2 border-neutral-400 transition duration-300 flex items-center gap-3 ${className}`}
     >
+      {icon ? icon : ""}
       {content}
     </button>
   );
