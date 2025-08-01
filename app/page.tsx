@@ -1,5 +1,10 @@
 import Image from "next/image";
+import Navbar from "./components/includes/Navbar";
 
 export default function Home() {
-  return <main>hi</main>;
+  return (
+    <main>
+      <Navbar />
+    </main>
+  );
 }
