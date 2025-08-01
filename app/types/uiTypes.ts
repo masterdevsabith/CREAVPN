@@ -1,6 +1,8 @@
+import { ReactNode } from "react";
+
 export interface ButtonProps {
   content: string;
-  icon?: string;
+  icon?: ReactNode;
   className?: string;
 }
 

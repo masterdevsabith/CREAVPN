@@ -28,7 +28,7 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="right">
-        <Button content="Get Started" />
+        <Button content="Get Started" className="border-neutral-600" />
       </div>
     </header>
   );
