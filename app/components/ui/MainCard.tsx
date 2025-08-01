@@ -16,7 +16,7 @@ export default function MainCard({
 }: MainCardProps) {
   return (
     <div
-      className={`main_card ${classname} flex flex-col items-center justify-between p-6 border-2 border-blue-600 rounded-3xl`}
+      className={`main_card ${classname} flex flex-col items-center justify-between p-6  rounded-3xl`}
     >
       <div className="top w-full flex flex-col items-center mb-8">
         <div className="logo_and_status w-full flex items-center justify-between mb-8">
@@ -74,7 +74,10 @@ export default function MainCard({
         </div>
       </div>
       <div className="bottom w-full flex items-center justify-center">
-        <Power className="bg-blue-600 text-white rounded-full p-4" size={90} />
+        <Power
+          className="bg-blue-600 text-white rounded-full p-4 shadow-[0_0_20px_0_rgba(0,123,255,0.7)] border border-blue-500"
+          size={90}
+        />
       </div>
     </div>
   );
