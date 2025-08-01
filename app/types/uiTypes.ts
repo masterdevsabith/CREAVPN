@@ -10,3 +10,10 @@ export interface StatusProps {
   content: string;
   classname?: string;
 }
+
+export interface BaseCardProps {
+  flag: string;
+  location: string;
+  cordinate: string;
+  status: boolean;
+}
