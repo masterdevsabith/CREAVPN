@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/Button";
+import { ChevronDown } from "lucide-react";
 
 const navlinks = [
   { label: "About Us", url: "#" },
@@ -18,7 +19,10 @@ export default function Navbar() {
         <ul className="flex items-center gap-8">
           {navlinks.map((navlink, idx) => (
             <Link href={navlink.url} key={idx}>
-              <li>{navlink.label}</li>
+              <li className="flex items-center gap-2">
+                {navlink.label}{" "}
+                {navlink.label == "Features" ? <ChevronDown /> : ""}
+              </li>
             </Link>
           ))}
         </ul>

@@ -4,7 +4,9 @@ import Navbar from "./components/includes/Navbar";
 export default function Home() {
   return (
     <main>
-      <Navbar />
+      <section className="special_bg">
+        <Navbar />
+      </section>
     </main>
   );
 }
