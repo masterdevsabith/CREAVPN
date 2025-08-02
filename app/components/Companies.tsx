@@ -16,8 +16,14 @@ export default function Companies() {
         <h2 className="text-2xl text-neutral-400">Trusted By</h2>
       </div>
       <div className="bottom flex items-center gap-18">
-        {logos.map((logo) => (
-          <Image src={logo.src} alt={logo.src} width={200} height={200} />
+        {logos.map((logo, idx) => (
+          <Image
+            key={idx}
+            src={logo.src}
+            alt={logo.src}
+            width={200}
+            height={200}
+          />
         ))}
       </div>
     </section>

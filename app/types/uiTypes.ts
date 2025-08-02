@@ -30,3 +30,10 @@ export interface MainCardProps {
   upload_speed: string;
   classname?: string;
 }
+
+export interface FeatureCardProps {
+  image: string;
+  heading: string;
+  subtitle: string;
+  className?: string;
+}
