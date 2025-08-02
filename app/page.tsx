@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Cards from "./components/Cards";
 import Companies from "./components/Companies";
 import SecureBrowsing from "./components/SecureBrowsing";
+import InnovativeFeature from "./components/InnovativeFeature";
 
 export default function Home() {
   return (
@@ -12,10 +13,9 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Cards />
-        <section className="special_bg_2 ">
-          <Companies />
-          <SecureBrowsing />
-        </section>
+        <Companies />
+        <SecureBrowsing />
+        <InnovativeFeature />
       </section>
     </main>
   );
