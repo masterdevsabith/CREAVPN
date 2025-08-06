@@ -49,3 +49,17 @@ export interface FloatingFlagProps {
   alignment: string;
   classname?: string;
 }
+
+export interface Feature {
+  text: string;
+  available: boolean;
+}
+
+export interface PricingCardProps {
+  plan: string;
+  description: string;
+  price: number;
+  features: Feature[];
+  isHighlighted?: boolean;
+  className?: string;
+}
