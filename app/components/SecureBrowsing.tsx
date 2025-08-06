@@ -8,7 +8,10 @@ export default function SecureBrowsing() {
           <h2 className="text-5xl text-white font-light text-center">
             Your Partner <br /> for Secure Browsing
           </h2>
-          <p></p>
+          <p className="text-md text-neutral-300 text-center mt-4">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum
+            doloribus nam atque totam?{" "}
+          </p>
         </div>
         <div className="bottom flex items-center gap-5">
           <FeatureCard

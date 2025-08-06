@@ -24,3 +24,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.world_map {
+  background-image: url("/images/globe.png");
+  background-size: cover; /* or contain, based on your need */
+  background-position: center;
+  background-repeat: no-repeat;
+}

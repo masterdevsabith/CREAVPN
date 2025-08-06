@@ -37,3 +37,14 @@ export interface FeatureCardProps {
   subtitle: string;
   className?: string;
 }
+
+export interface FloatingFlagProps {
+  image: string;
+  country: string;
+  servers: string;
+  top: string;
+  right: string;
+  bottom?: string;
+  left?: string;
+  alignment: string;
+}
