@@ -17,11 +17,38 @@ export default function Map() {
       </div>
       <section className="world_map py-14 px-20 h-160 relative">
         <FloatingFlag
-          image="/country-svgs/GB.svg"
-          country="England"
+          image="/country-svgs/RU.svg"
+          country="Russia"
           servers="45"
-          top="10"
-          right="200"
+          classname="top-30 right-280"
+          alignment="right"
+        />
+        <FloatingFlag
+          image="/country-svgs/PT.svg"
+          country="Portugal"
+          servers="102"
+          classname="top-80 right-210"
+          alignment="right"
+        />{" "}
+        <FloatingFlag
+          image="/country-svgs/US.svg"
+          country="USA"
+          servers="2"
+          classname="top-30 right-170"
+          alignment="right"
+        />
+        <FloatingFlag
+          image="/country-svgs/ID.svg"
+          country="Indonesia"
+          servers="89"
+          classname="top-68 right-140"
+          alignment="right"
+        />
+        <FloatingFlag
+          image="/country-svgs/MY.svg"
+          country="Malaysia"
+          servers="16"
+          classname="top-20 right-80"
           alignment="right"
         />
       </section>

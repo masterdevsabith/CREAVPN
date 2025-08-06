@@ -42,9 +42,10 @@ export interface FloatingFlagProps {
   image: string;
   country: string;
   servers: string;
-  top: string;
-  right: string;
+  top?: string;
+  right?: string;
   bottom?: string;
   left?: string;
   alignment: string;
+  classname?: string;
 }

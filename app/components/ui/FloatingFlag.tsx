@@ -9,6 +9,7 @@ export default function FloatingFlag({
   right,
   bottom,
   left,
+  classname,
   alignment,
 }: FloatingFlagProps) {
   const position = (alignment: string) => {
@@ -27,7 +28,7 @@ export default function FloatingFlag({
   };
   return (
     <div
-      className={`floating_component absolute gap-3 ${top} ${right} ${
+      className={`floating_component absolute gap-3 group ${classname} ${
         alignment ? position(alignment) : ""
       }`}
     >
@@ -40,12 +41,19 @@ export default function FloatingFlag({
           <p className="text-neutral-400">{servers} servers</p>
         </div>
       </div>
-      <div className="location_dot">
+      <div className="location_dot relative ">
         <Image
           src={"/icons/circle.svg"}
           alt="location circle"
           width={30}
           height={30}
+        />
+        <Image
+          src={"/icons/circle.svg"}
+          alt="location circle"
+          width={30}
+          height={30}
+          className="group-hover:animate-ping absolute top-0 right-0"
         />
       </div>
     </div>
