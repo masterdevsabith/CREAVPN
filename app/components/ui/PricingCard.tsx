@@ -10,7 +10,11 @@ export default function PricingCard({
 }: PricingCardProps) {
   return (
     <div
-      className={`rounded-2xl bg-[#0d1525] text-white p-6 border border-white/10 shadow-md ${className}`}
+      className={`rounded-2xl bg-[#0d1525] text-white p-6 border  shadow-md ${className} ${
+        isHighlighted
+          ? "border-blue-500 hover:shadow-[0px_-1px_20px_-5px_#228be6] "
+          : "border-white/10"
+      }`}
     >
       <span className="inline-block mb-4 px-4 py-1 text-sm bg-white/10 rounded-full">
         {plan}

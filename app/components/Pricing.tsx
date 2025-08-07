@@ -13,7 +13,7 @@ export default function Pricing() {
           doloribus nam atque totam?{" "}
         </p>
       </div>
-      <div className="bottom flex items-center justify-center gap-6">
+      <div className="bottom flex items-center justify-center gap-6 px-30">
         <PricingCard
           plan="Basic Plan"
           description="Perfect for those who need simple"
@@ -28,6 +28,7 @@ export default function Pricing() {
             { text: "DNS leak protection", available: false },
             { text: "Multi-protocol support", available: false },
           ]}
+          className="w-[32%]"
         />
 
         <PricingCard
@@ -44,6 +45,7 @@ export default function Pricing() {
             { text: "Dedicated IP option", available: true },
             { text: "Malware & phishing protection", available: false },
           ]}
+          className="w-[32%]"
         />
 
         <PricingCard
@@ -60,6 +62,7 @@ export default function Pricing() {
             { text: "DNS leak protection", available: true },
             { text: "Unlimited bandwidth", available: true },
           ]}
+          className="w-[32%]"
         />
       </div>
     </section>
