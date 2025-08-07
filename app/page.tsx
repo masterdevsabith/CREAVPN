@@ -8,6 +8,7 @@ import InnovativeFeature from "./components/InnovativeFeature";
 import Map from "./components/Map";
 import Pricing from "./components/Pricing";
 import Faq from "./components/Faq";
+import Banner from "./components/Banner";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Map />
         <Pricing />
         <Faq />
+        <Banner />
       </section>
     </main>
   );
