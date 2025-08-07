@@ -7,6 +7,7 @@ import SecureBrowsing from "./components/SecureBrowsing";
 import InnovativeFeature from "./components/InnovativeFeature";
 import Map from "./components/Map";
 import Pricing from "./components/Pricing";
+import Faq from "./components/Faq";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <InnovativeFeature />
         <Map />
         <Pricing />
+        <Faq />
       </section>
     </main>
   );
