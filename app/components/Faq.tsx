@@ -62,10 +62,10 @@ export default function Faq() {
             <div
               key={index}
               onClick={() => toggleIndex(index)}
-              className={`transition-all duration-300 rounded-xl p-5 border border-neutral-600 ${
+              className={`transition-all duration-300 rounded-3xl p-5  ${
                 isOpen
-                  ? "bg-[#0D1424]  text-white"
-                  : "bg-[#0D1424]/60  backdrop-blur-2xl text-zinc-200 hover:bg-[#0D1424]"
+                  ? "bg-[#0D1424]  text-white border-l border-r border-white/40 "
+                  : "bg-[#0D1424]/60  backdrop-blur-2xl text-zinc-200 hover:bg-[#0D1424] border-2 border-neutral-800"
               }`}
             >
               <div className="flex items-center justify-between cursor-pointer">
