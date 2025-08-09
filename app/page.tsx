@@ -9,10 +9,11 @@ import Map from "./components/Map";
 import Pricing from "./components/Pricing";
 import Faq from "./components/Faq";
 import Banner from "./components/Banner";
+import Footer from "./components/includes/Footer";
 
 export default function Home() {
   return (
-    <main className="pb-20">
+    <main className="">
       <section className="special_bg min-h-screen bg-[radial-gradient(ellipse_at_center,_#0B172F,_#0a0f1c)] text-white">
         <Navbar />
         <Hero />
@@ -24,6 +25,7 @@ export default function Home() {
         <Pricing />
         <Faq />
         <Banner />
+        <Footer />
       </section>
     </main>
   );
