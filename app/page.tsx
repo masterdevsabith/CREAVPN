@@ -19,7 +19,7 @@ export default function Home() {
         <Hero />
         <Cards />
         <Companies />
-        {/* <SecureBrowsing /> */}
+        <SecureBrowsing />
         {/* <InnovativeFeature /> */}
         {/* <Map /> */}
         {/* <Pricing /> */}
