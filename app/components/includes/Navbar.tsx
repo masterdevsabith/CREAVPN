@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/Button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const navlinks = [
   { label: "About Us", url: "#" },
@@ -9,13 +12,20 @@ const navlinks = [
   { label: "Our Missions", url: "#" },
   { label: "Articles", url: "#" },
 ];
+
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <header className="flex items-center justify-between px-12 py-12">
+    <header className="relative flex items-center justify-between px-12 py-12">
       <div className="left">
         <Image src={"/icons/logo.svg"} alt="logo" width={150} height={150} />
       </div>
-      <div className="mid flex items-center justify-center sm:hidden md:block">
+      <div className="mid flex items-center justify-center sm:hidden lg:block">
         <ul className="flex items-center gap-8">
           {navlinks.map((navlink, idx) => (
             <Link href={navlink.url} key={idx}>
@@ -27,10 +37,33 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="right sm:hidden md:block">
+      <div className="right sm:hidden lg:block">
         <Button content="Get Started" className="border-neutral-600" />
       </div>
-      <div className="hamburger_menu"></div>
+      <div className="hamburger_menu sm:block lg:hidden">
+        <Menu className="text-white" size={30} onClick={handleOpen} />
+      </div>
+
+      {isOpen ? (
+        <div className="small_screen_menu border-l-1 border-neutral-700 absolute top-0 right-0 bg-[#0A1327]/10 backdrop-blur-2xl sm:w-1/2 md:w-1/3 h-screen flex items-center justify-center z-50 ">
+          <X className="absolute top-5 left-5" onClick={handleOpen} />
+          <div className="navs flex flex-col items-center gap-12">
+            <ul className="flex flex-col items-start gap-4 ">
+              {navlinks.map((navlink, idx) => (
+                <Link href={navlink.url} key={idx} className="inline-block">
+                  <li className="flex items-center gap-2 text-white font-semibold">
+                    {navlink.label}{" "}
+                    {navlink.label == "Features" ? <ChevronDown /> : ""}
+                  </li>
+                </Link>
+              ))}
+            </ul>
+            <Button content="Get Started" className="border-neutral-600" />
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
     </header>
   );
 }
