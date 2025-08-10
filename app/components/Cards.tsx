@@ -3,14 +3,14 @@ import MainCard from "./ui/MainCard";
 
 export default function Cards() {
   return (
-    <section className="cards_section py-10">
+    <section className="cards_section py-10 sm:hidden xl:block">
       <div className="cards flex items-end justify-center gap-5">
         <BaseCard
           flag="/country-svgs/TR.svg"
           location="Istanbul, Turkey"
           cordinate="24.9420.2032"
           status
-          classname="w-[31%] min-h-110"
+          classname="2xl:w-[31%] 2xl:min-h-110 xl:w-[28%] xl:min-h-90"
         />
         <MainCard
           logo="/icons/logo.svg"
@@ -28,7 +28,7 @@ export default function Cards() {
           location="Jakarta, Indonesia"
           cordinate="54.3421.9482"
           status
-          classname="w-[31%] min-h-110"
+          classname="2xl:w-[31%] 2xl:min-h-110 xl:w-[28%] xl:min-h-90"
         />
       </div>
     </section>

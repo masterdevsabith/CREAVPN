@@ -1,6 +1,5 @@
 import { BaseCardProps } from "@/app/types/uiTypes";
-import { stat } from "fs";
-import { ArrowUpRight, Divide } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Statusbar from "./Statusbar";
 
