@@ -17,15 +17,15 @@ export default function Home() {
       <section className="special_bg min-h-screen bg-[radial-gradient(ellipse_at_center,_#0B172F,_#0a0f1c)] text-white">
         <Navbar />
         <Hero />
-        <Cards />
-        <Companies />
-        <SecureBrowsing />
-        <InnovativeFeature />
-        <Map />
-        <Pricing />
-        <Faq />
-        <Banner />
-        <Footer />
+        {/* <Cards /> */}
+        {/* <Companies /> */}
+        {/* <SecureBrowsing /> */}
+        {/* <InnovativeFeature /> */}
+        {/* <Map /> */}
+        {/* <Pricing /> */}
+        {/* <Faq /> */}
+        {/* <Banner /> */}
+        {/* <Footer /> */}
       </section>
     </main>
   );

@@ -15,7 +15,7 @@ export default function Navbar() {
       <div className="left">
         <Image src={"/icons/logo.svg"} alt="logo" width={150} height={150} />
       </div>
-      <div className="mid flex items-center justify-center">
+      <div className="mid flex items-center justify-center sm:hidden md:block">
         <ul className="flex items-center gap-8">
           {navlinks.map((navlink, idx) => (
             <Link href={navlink.url} key={idx}>
@@ -27,9 +27,10 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="right">
+      <div className="right sm:hidden md:block">
         <Button content="Get Started" className="border-neutral-600" />
       </div>
+      <div className="hamburger_menu"></div>
     </header>
   );
 }

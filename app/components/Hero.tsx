@@ -10,10 +10,10 @@ export default function Hero() {
           content="CreaVPN version 2.0 is available"
           classname="mb-4"
         />
-        <h1 className="text-7xl font-semibold mb-8">
+        <h1 className="sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-8">
           Fast, Reliable, & Secure <br /> VPN for Every Device
         </h1>
-        <p className="max-w-2xl text-center mb-12">
+        <p className="sm:max-w-lg md:max-w-2xl text-center mb-12">
           Enjoy uninterrupted browsing, streaming, and gaming with
           industry-leading security and blazing-fast connections on every
           platform only with CreaVPN.
