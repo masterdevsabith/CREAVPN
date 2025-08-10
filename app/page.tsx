@@ -20,7 +20,7 @@ export default function Home() {
         <Cards />
         <Companies />
         <SecureBrowsing />
-        {/* <InnovativeFeature /> */}
+        <InnovativeFeature />
         {/* <Map /> */}
         {/* <Pricing /> */}
         {/* <Faq /> */}

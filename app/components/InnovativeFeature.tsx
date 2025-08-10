@@ -44,9 +44,9 @@ const features = [
 
 export default function InnovativeFeature() {
   return (
-    <section className="innovative_feautre py-14 px-20 flex items-start gap-16">
-      <div className="left w-1/2">
-        <div className="outercontainer bg-[#0D1424] border border-neutral-600 p-30 rounded-2xl">
+    <section className="innovative_feautre py-14 px-20 flex items-start gap-16 sm:flex-col-reverse xl:flex-row">
+      <div className="left xl:w-1/2 sm:w-full">
+        <div className="outercontainer bg-[#0D1424] border border-neutral-600 2xl:p-30 xl:p-16 xl:py-28 rounded-2xl">
           <div className="inner_container bg-[#141A2B]/60 p-5 border border-neutral-600 rounded-2xl backdrop-blur-lg shadow-xl/30 shadow-black/70">
             <div className="top mb-5">
               <h4 className="text-2xl font-light">Available Server</h4>
@@ -85,9 +85,9 @@ export default function InnovativeFeature() {
           </div>
         </div>
       </div>
-      <div className="right w-1/2">
-        <div className="top mb-12">
-          <h2 className="text-5xl font-light mb-4">
+      <div className="right xl:w-1/2 sm:w-full">
+        <div className="top mb-12 sm:flex sm:flex-col sm:items-center sm:text-center">
+          <h2 className="text-5xl font-light mb-4 lg:max-w-3xl">
             Innovative Features for Ultimate Online Security
           </h2>
           <p className="text-md text-neutral-400 max-w-lg">
@@ -95,9 +95,12 @@ export default function InnovativeFeature() {
             alerts you to potential risks and keeps your connection safe.
           </p>
         </div>
-        <div className="bottom flex flex-col items-start justify-between gap-16">
+        <div className="bottom flex xl:flex-col items-start justify-between xl:gap-16 md:flex-row sm:gap-10 sm:flex-col ">
           {features.map((feature, idx) => (
-            <div className="item flex items-start gap-3" key={idx}>
+            <div
+              className="item flex md:items-start gap-3 sm:flex-col xl:flex-row sm:items-center sm:text-center md:text-left"
+              key={idx}
+            >
               <div className="num p-3 bg-blue-600 rounded-md w-10 h-10 flex items-center justify-center text-white">
                 {feature.id}
               </div>
