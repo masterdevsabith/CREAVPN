@@ -11,11 +11,11 @@ const logos = [
 
 export default function Companies() {
   return (
-    <section className="companies py-18 flex flex-col items-center">
+    <section className="companies py-18 px-12 flex flex-col items-center">
       <div className="top mb-8">
         <h2 className="text-2xl text-neutral-400">Trusted By</h2>
       </div>
-      <div className="bottom flex items-center gap-18">
+      <div className="bottom flex items-center gap-18 sm:flex-wrap sm:justify-center">
         {logos.map((logo, idx) => (
           <Image
             key={idx}
@@ -23,6 +23,7 @@ export default function Companies() {
             alt={logo.src}
             width={200}
             height={200}
+            className="sm:w-44 lg:w-50"
           />
         ))}
       </div>
