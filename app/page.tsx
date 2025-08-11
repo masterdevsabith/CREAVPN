@@ -21,8 +21,8 @@ export default function Home() {
         <Companies />
         <SecureBrowsing />
         <InnovativeFeature />
-        {/* <Map /> */}
-        {/* <Pricing /> */}
+        <Map />
+        <Pricing />
         {/* <Faq /> */}
         {/* <Banner /> */}
         {/* <Footer /> */}
