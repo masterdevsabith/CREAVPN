@@ -41,9 +41,9 @@ export default function Faq() {
   };
 
   return (
-    <section className="faq_section py-30 px-30 h-screen flex items-start justify-between">
-      <div className="left w-1/3">
-        <h2 className="text-5xl text-white font-light text-left mb-2">
+    <section className="faq_section py-30 px-30 flex xl:items-start justify-between xl:flex-row sm:flex-col sm:items-center">
+      <div className="left 2xl:w-1/3 xl:w-1/2 sm:w-full xl:mb-0 flex xl:items-start sm:flex-col sm:items-center sm:mb-12">
+        <h2 className="text-5xl text-white font-light xl:text-left mb-2 sm:text-center">
           Frequently Asked Questions
         </h2>
         <p className="text-neutral-300 mb-4">
@@ -54,7 +54,7 @@ export default function Faq() {
           className="border-blue-700 bg-blue-700"
         />
       </div>
-      <div className="right w-2/3 space-y-3 ">
+      <div className="right 2xl:w-2/3 xl:w-1/2 sm:w-full space-y-3 ">
         {faqData.map((item, index) => {
           const isOpen = index === openIndex;
 
@@ -62,9 +62,9 @@ export default function Faq() {
             <div
               key={index}
               onClick={() => toggleIndex(index)}
-              className={`transition-all duration-300 rounded-3xl p-5  ${
+              className={`transition-all duration-300 rounded-3xl p-5 w-full ${
                 isOpen
-                  ? "bg-[#0D1424]  text-white border-l border-r border-white/40 "
+                  ? "bg-[#0D1424]  text-white border-1 border-white/40 "
                   : "bg-[#0D1424]/60  backdrop-blur-2xl text-zinc-200 hover:bg-[#0D1424] border-2 border-neutral-800"
               }`}
             >

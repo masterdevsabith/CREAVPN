@@ -23,7 +23,7 @@ export default function Home() {
         <InnovativeFeature />
         <Map />
         <Pricing />
-        {/* <Faq /> */}
+        <Faq />
         {/* <Banner /> */}
         {/* <Footer /> */}
       </section>
