@@ -2,13 +2,13 @@ import FloatingFlag from "./ui/FloatingFlag";
 
 export default function Map() {
   return (
-    <section className="globe_section pt-30">
+    <section className="globe_section pt-16">
       <div className="top mb-12 flex flex-col items-center">
         <h2 className="text-5xl text-white font-light text-center">
           Secure Access Across 50+ <br />
           Countries at Your Fingertips
         </h2>
-        <p className="text-md text-neutral-400 text-center mt-4 max-w-2xl">
+        <p className="text-md text-neutral-400 text-center mt-4 max-w-2xl sm:max-w-xl">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
           atque dolorem, voluptatem aliquam quaerat cupiditate veniam in ea
           omnis iure dicta provident fugit pariatur voluptates corrupti

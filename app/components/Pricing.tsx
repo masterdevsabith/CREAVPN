@@ -3,17 +3,17 @@ import PricingCard from "./ui/PricingCard";
 export default function Pricing() {
   return (
     <section className="pricing_section py-10">
-      <div className="top mb-12">
+      <div className="top mb-12 flex flex-col items-center">
         <h2 className="text-5xl text-white font-light text-center">
           Premium Features,
           <br /> Budget-Friendly Pricing
         </h2>
-        <p className="text-md text-neutral-300 text-center mt-4">
+        <p className="text-md text-neutral-300 mt-4 max-w-lg text-center">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum
           doloribus nam atque totam?{" "}
         </p>
       </div>
-      <div className="bottom flex items-center justify-center gap-6 px-30">
+      <div className="bottom flex items-center justify-center gap-6 px-30 xl:flex-row sm:flex-col">
         <PricingCard
           plan="Basic Plan"
           description="Perfect for those who need simple"
@@ -28,7 +28,7 @@ export default function Pricing() {
             { text: "DNS leak protection", available: false },
             { text: "Multi-protocol support", available: false },
           ]}
-          className="w-[32%]"
+          className="xl:w-[32%] md:w-[70%] sm:w-full"
         />
 
         <PricingCard
@@ -45,7 +45,7 @@ export default function Pricing() {
             { text: "Dedicated IP option", available: true },
             { text: "Malware & phishing protection", available: false },
           ]}
-          className="w-[32%]"
+          className="xl:w-[32%] md:w-[70%] sm:w-full"
         />
 
         <PricingCard
@@ -62,7 +62,7 @@ export default function Pricing() {
             { text: "DNS leak protection", available: true },
             { text: "Unlimited bandwidth", available: true },
           ]}
-          className="w-[32%]"
+          className="xl:w-[32%] md:w-[70%] sm:w-full"
         />
       </div>
     </section>
