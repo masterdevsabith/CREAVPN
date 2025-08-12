@@ -3,22 +3,23 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0f1a] text-white py-10 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+    <footer className="bg-[#0a0f1a] text-white py-10 px-16">
+      <div className="max-w-7xl mx-auto flex lg:items-start gap-8 lg:flex-row sm:flex-col sm:items-center">
         {/* Logo */}
-        <div>
+        <div className="w-full flex lg:items-start flex-col sm:items-center lg:text-left sm:text-center">
           <div className="text-xl font-bold">
             <Image
               src={"/icons/logo.svg"}
               alt="logo"
               width={120}
               height={120}
+              className="sm:w-40 lg:w-30"
             />
           </div>
         </div>
 
         {/* Company */}
-        <div>
+        <div className="w-full flex lg:items-start flex-col sm:items-center lg:text-left sm:text-center">
           <h3 className="font-semibold mb-3">Company</h3>
           <ul className="space-y-2">
             {footerData.company.map((item, i) => (
@@ -30,7 +31,7 @@ export default function Footer() {
         </div>
 
         {/* Products */}
-        <div>
+        <div className="w-full flex lg:items-start flex-col sm:items-center lg:text-left sm:text-center">
           <h3 className="font-semibold mb-3">Products</h3>
           <ul className="space-y-2">
             {footerData.products.map((item, i) => (
@@ -42,7 +43,7 @@ export default function Footer() {
         </div>
 
         {/* Resources */}
-        <div>
+        <div className="w-full flex lg:items-start flex-col sm:items-center lg:text-left sm:text-center">
           <h3 className="font-semibold mb-3">Resources</h3>
           <ul className="space-y-2">
             {footerData.resources.map((item, i) => (
@@ -54,7 +55,7 @@ export default function Footer() {
         </div>
 
         {/* Headquarters */}
-        <div>
+        <div className="w-full flex lg:items-start flex-col sm:items-center lg:text-left sm:text-center">
           <h3 className="font-semibold mb-3">Headquarters</h3>
           <p className="mb-2">{footerData.headquarters.address}</p>
           <p className="mb-2">{footerData.headquarters.phone}</p>
