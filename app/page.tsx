@@ -24,8 +24,8 @@ export default function Home() {
         <Map />
         <Pricing />
         <Faq />
-        {/* <Banner /> */}
-        {/* <Footer /> */}
+        <Banner />
+        <Footer />
       </section>
     </main>
   );
