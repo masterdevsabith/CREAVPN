@@ -18,32 +18,37 @@ export default function ArticlesPage() {
   return (
     <section className="special_bg bg-[radial-gradient(ellipse_at_center,_#0B172F,_#0a0f1c)]">
       <Navbar />
-      <section className="bottom flex flex-col items-center w-full justify-center">
-        <section className="featured p-5 border border-neutral-400 rounded-md w-full max-w-[80%] flex gap-6 items-start bg-zinc-900">
-          <div className="left flex-shrink-0">
+      <section className="bottom flex flex-col items-center w-full justify-center h-full">
+        <section className="featured p-12  rounded-md w-full h-86 max-w-[80%] flex gap-6 items-start ">
+          <div className="left ">
             <Image
               src={"/images/vpn_cover.webp"}
               alt="featured_article_image"
-              width={200}
-              height={200}
+              width={350}
+              height={350}
               className="rounded-md object-cover"
             />
           </div>
 
-          <div className="right flex flex-col justify-between">
-            <h1 className="text-2xl font-bold text-white">
-              {featuredPost.title}
-            </h1>
-            <p className="text-neutral-400 mt-2">{featuredPost.excerpt}</p>
-
-            <div className="flex items-center justify-between mt-4 text-sm text-neutral-500">
-              <span>By {featuredPost.author}</span>
-              <span>{featuredPost.date}</span>
+          <div className="right flex flex-col justify-between w-full h-full">
+            <div className="top">
+              <h1 className="text-3xl font-bold text-white">
+                {featuredPost.title}
+              </h1>
+              <div className="flex items-center gap-3 mt-4 text-sm text-neutral-500">
+                <span>By {featuredPost.author}</span> |{" "}
+                <span>{featuredPost.date}</span>
+              </div>
+              <p className="text-neutral-400 mt-2 max-w-2xl">
+                {featuredPost.excerpt}
+              </p>
             </div>
 
-            <button className="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white text-sm w-fit">
-              Read More
-            </button>
+            <div className="button">
+              <button className="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white text-sm w-fit block">
+                Read More
+              </button>
+            </div>
           </div>
         </section>
 
