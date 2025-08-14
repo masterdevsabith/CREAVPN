@@ -31,3 +31,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.no-scroll-bar::-webkit-scrollbar {
+  width: 0;
+}
