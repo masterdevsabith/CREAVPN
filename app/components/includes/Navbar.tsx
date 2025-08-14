@@ -10,7 +10,7 @@ const navlinks = [
   { label: "About Us", url: "#" },
   { label: "Features", url: "#" },
   { label: "Our Missions", url: "#" },
-  { label: "Articles", url: "#" },
+  { label: "Articles", url: "/articles" },
 ];
 
 export default function Navbar() {
@@ -23,7 +23,9 @@ export default function Navbar() {
   return (
     <header className="relative flex items-center justify-between px-12 py-12">
       <div className="left">
-        <Image src={"/icons/logo.svg"} alt="logo" width={150} height={150} />
+        <Link href={"/"}>
+          <Image src={"/icons/logo.svg"} alt="logo" width={150} height={150} />
+        </Link>
       </div>
       <div className="mid flex items-center justify-center sm:hidden lg:block">
         <ul className="flex items-center gap-8">
