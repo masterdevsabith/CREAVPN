@@ -67,7 +67,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="messages space-y-4 p-4 overflow-y-scroll h-[400px] no-scroll-bar">
+        <div className="messages space-y-4 p-4 overflow-y-scroll h-[394px] no-scroll-bar">
           {[
             { sender: "user", text: "Hi, I’m looking for a secure VPN." },
             {
