@@ -2,6 +2,7 @@ import Image from "next/image";
 import Navbar from "../components/includes/Navbar";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import Footer from "../components/includes/Footer";
 
 const achievements = [
   { label: "35M+", for: "App downloads" },
@@ -131,7 +132,7 @@ export default function AboutPage() {
           {quotations.map((quotation, idx) => (
             <div
               key={idx}
-              className="quote_box bg-neutral-100/10 backdrop-blur-lg flex flex-col items-center p-5 rounded-md hover:shadow-xl/30"
+              className="quote_box relative bg-neutral-100/10 backdrop-blur-lg flex flex-col items-center p-5 rounded-md hover:shadow-xl/30"
             >
               <Image
                 src={quotation.image}
@@ -146,13 +147,15 @@ export default function AboutPage() {
               <Image
                 src={"/images/quote-icon.svg"}
                 alt="qoute icon"
-                width={100}
-                height={100}
+                width={50}
+                height={50}
+                className="absolute -top-5 right-10"
               />
             </div>
           ))}
         </div>
       </section>
+      <Footer />
     </section>
   );
 }
