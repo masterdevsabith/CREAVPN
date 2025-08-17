@@ -7,7 +7,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navlinks = [
-  { label: "About Us", url: "#" },
+  { label: "About Us", url: "/about" },
   { label: "Features", url: "#" },
   { label: "Our Missions", url: "#" },
   { label: "Articles", url: "/articles" },
