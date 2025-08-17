@@ -4,6 +4,7 @@ export interface ButtonProps {
   content: string;
   icon?: ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
 export interface StatusProps {

@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/Button";
 import { ChevronDown, Menu, X } from "lucide-react";
+
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const navlinks = [
@@ -16,6 +18,7 @@ const navlinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const router = useRouter();
   const handleOpen = () => {
     setIsOpen(!isOpen);
   };
@@ -40,7 +43,11 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="right sm:hidden lg:block">
-        <Button content="Get Started" className="border-neutral-600" />
+        <Button
+          content="Get Started"
+          className="border-neutral-600 hover:bg-white/20"
+          onClick={() => router.push("/auth/signup")}
+        />
       </div>
       <div className="hamburger_menu sm:block lg:hidden">
         <Menu className="text-white" size={30} onClick={handleOpen} />
@@ -60,7 +67,10 @@ export default function Navbar() {
                 </Link>
               ))}
             </ul>
-            <Button content="Get Started" className="border-neutral-600" />
+            <Button
+              content="Get Started"
+              className="border-neutral-600 hover:bg-white/20"
+            />
           </div>
         </div>
       ) : (
