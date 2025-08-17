@@ -3,6 +3,7 @@ import Navbar from "../components/includes/Navbar";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import Footer from "../components/includes/Footer";
+import Button from "../components/ui/Button";
 
 const achievements = [
   { label: "35M+", for: "App downloads" },
@@ -153,6 +154,26 @@ export default function AboutPage() {
               />
             </div>
           ))}
+        </div>
+      </section>
+      <section className="join_our_team flex items-center justify-center py-12">
+        <div className="container flex items-center justify-between  bg-blue-400/55 p-12 max-w-6xl rounded-2xl">
+          <div className="left flex flex-col items-start justify-between">
+            <h2 className="text-2xl font-semibold mb-2">Join our team</h2>
+            <p className="text-md text-neutral-200 max-w-lg mb-6">
+              Become a part of our mission to build the most beloved security
+              products for everyone.
+            </p>
+            <Button content="Join Now" />
+          </div>
+          <div className="right">
+            <Image
+              src={"/images/team-modal-cover.webp"}
+              alt="a_person"
+              width={600}
+              height={600}
+            />
+          </div>
         </div>
       </section>
       <Footer />
