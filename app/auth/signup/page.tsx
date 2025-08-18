@@ -2,21 +2,51 @@
 
 import Navbar from "@/app/components/includes/Navbar";
 import { Eye, Mail, Lock, Apple, Chrome } from "lucide-react";
+
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { supabase } from "../../lib/supabaseClient";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+
+  const router = useRouter();
+
+  const handleSignUp = async () => {
+    setLoading(true);
+    setError("");
+    setMessage("");
+
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+    if (error) {
+      setError(error.message);
+    } else if (data.session) {
+      router.push("/dashboard");
+    } else {
+      setMessage("Sign-up successful, please login.");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <section className="sign_up_page special_bg bg-[radial-gradient(ellipse_at_center,_#0B172F,_#0a0f1c)]">
       <Navbar />
       <section className="sign_up_form flex items-center justify-center min-h-screen">
         <div className="left w-full max-w-md p-6 bg-blue-950/10 backdrop-blur-2xl shadow-md border border-neutral-600 rounded-2xl ">
           <h2 className="text-2xl font-bold text-center mb-2">
-            Hi there, good to see you back!
+            Hi there, ready to enjoy Creavpn?
           </h2>
           <p className="text-center text-sm text-neutral-300 mb-6">
-            Log in to your account and start securing your digital life.
+            SignUp to get your account and start securing your digital life.
           </p>
 
           <div className="flex items-center border rounded-lg px-3 mb-3">
@@ -46,9 +76,15 @@ export default function SignUpPage() {
             Forgot your password?
           </p>
 
-          <button className="w-full py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-sky-500 mb-3">
-            Log in
+          <button
+            onClick={handleSignUp}
+            disabled={loading}
+            className="w-full py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-sky-500 mb-3"
+          >
+            {loading ? "Signing up..." : "Sign Up"}
           </button>
+          {error && <p className="text-red-600 mt-2">{error}</p>}
+          {message && <p className="text-green-600 mt-2">{message}</p>}
 
           {/* <button className="w-full py-3 rounded-lg bg-gray-100 font-semibold text-gray-700 hover:bg-gray-200 mb-6">
             Log in with code
