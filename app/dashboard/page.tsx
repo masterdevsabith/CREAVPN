@@ -100,7 +100,7 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="right absolute z-30 top-2 right-2 w-50 h-100 p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-8 pb-5">
           <div className="flex flex-col items-center gap-1 cursor-pointer hover:text-white">
             <Shield size={28} />
             <span className="text-xs">NetShield</span>
