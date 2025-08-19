@@ -1,5 +1,6 @@
 "use client";
 
+import L from "leaflet";
 import {
   MapContainer,
   TileLayer,
