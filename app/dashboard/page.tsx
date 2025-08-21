@@ -180,9 +180,9 @@ export default function Dashboard() {
             <button
               className="px-6 py-2 bg-[#ff2a2a] hover:bg-[#da1919] rounded-md font-medium shadow-md"
               onClick={() => {
-                setConnected(!connected);
                 setLoading(true);
                 setTimeout(() => {
+                  setConnected(!connected);
                   setConnectedData(null);
                   setLoading(false);
                 }, 1000);
