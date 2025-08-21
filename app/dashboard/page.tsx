@@ -53,6 +53,7 @@ export default function Dashboard() {
 
   const [loading, setLoading] = useState(false);
   const [connected, setConnected] = useState(false);
+  const [connectedData, setConnectedData] = useState<any>(null);
 
   const handleSetLatLong = (lat: number, lng: number) => {
     setLoading(true); // show loader immediately
@@ -64,7 +65,27 @@ export default function Dashboard() {
     }, 1500); // delay before moving map
   };
 
-  const handleConnect = (lat: number, lng: number) => {};
+  const handleConnect = (lat: number, lng: number) => {
+    setLoading(true);
+
+    const country = availableCountries.find(
+      (c) => c.lat === lat && c.lng === lng
+    );
+
+    setTimeout(() => {
+      if (country) {
+        setConnectedData({
+          img: country.img,
+          name: country.name,
+        });
+      } else {
+        setConnectedData(null); // fallback if not found
+      }
+
+      setLoading(false);
+      setConnected(true);
+    }, 1500);
+  };
 
   // useEffect(() => {
   //   const timer = setTimeout(() => {
@@ -85,17 +106,51 @@ export default function Dashboard() {
     <section className="dashboard relative  h-screen overflow-hidden ">
       <div className="absolute top-0 left-0 w-full h-70 z-30 p-12">
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#171732] to-transparent" />
+        <div
+          className={`absolute inset-0 bg-gradient-to-b ${
+            connected ? "from-[#24ff2b77]" : "from-[#ff3f3f99]"
+          } to-transparent`}
+        />
 
         {/* Content */}
         <div className="relative flex flex-col items-center justify-start h-full text-white">
-          <span className="bg-green-500 text-black px-2 py-1 rounded-md text-xs font-semibold mb-2">
+          <span className="bg-green-500 text-white px-2 py-1 rounded-md text-xs font-semibold mb-2">
             Fastest free server
           </span>
-          <p className="text-sm opacity-80 mb-3">Auto-selected from 🇺🇸 🇯🇵 +2</p>
-          <button className="px-6 py-2 bg-[#6d4aff] hover:bg-[#5b39e3] rounded-md font-medium shadow-md">
-            Connect
-          </button>
+          {connectedData && (
+            <p className="text-sm text-black opacity-80 mb-3 flex items-center gap-1">
+              Connected to{" "}
+              <Image
+                src={connectedData?.img}
+                alt={connectedData?.name}
+                width={18}
+                height={18}
+              />
+              {connectedData?.name}
+            </p>
+          )}
+          {connected ? (
+            <button
+              className="px-6 py-2 bg-[#ff2a2a] hover:bg-[#da1919] rounded-md font-medium shadow-md"
+              onClick={() => {
+                setConnected(!connected);
+                setLoading(true);
+                setTimeout(() => {
+                  setConnectedData(null);
+                  setLoading(false);
+                }, 1000);
+              }}
+            >
+              Disconnect
+            </button>
+          ) : (
+            <button
+              className="px-6 py-2 bg-[#6d4aff] hover:bg-[#5b39e3] rounded-md font-medium shadow-md"
+              onClick={() => handleConnect(lat, lng)}
+            >
+              Connect
+            </button>
+          )}
         </div>
       </div>
       <LeafletMap lat={lat} lng={lng} />
