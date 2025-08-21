@@ -17,6 +17,7 @@ import {
   Settings,
   Lock,
   Unlock,
+  Menu,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -84,6 +85,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(false);
   const [connected, setConnected] = useState(false);
   const [connectedData, setConnectedData] = useState<any>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleSetLatLong = (lat: number, lng: number) => {
     setLoading(true); // show loader immediately
@@ -211,7 +213,11 @@ export default function Dashboard() {
         </div>
       )}
 
-      <div className="left absolute z-50 top-4 left-4 w-80  p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">
+      <div
+        className={`left  absolute z-50  ${
+          isOpen ? "sm:left-4" : "sm:-left-100"
+        } top-4 lg:left-4 w-80  p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md transition-all duration-300`}
+      >
         {/* Search */}
         <div className="flex items-center gap-2 bg-[#2a2a2f] rounded-md px-2 py-2 mb-4">
           <Search size={16} className="text-gray-400" />
@@ -276,7 +282,10 @@ export default function Dashboard() {
             <div
               key={idx}
               className="flex items-center gap-3 p-2 rounded-md hover:bg-[#2a2a2f] cursor-pointer"
-              onClick={() => handleSetLatLong(countrydata.lat, countrydata.lng)}
+              onClick={() => {
+                handleSetLatLong(countrydata.lat, countrydata.lng);
+                setIsOpen(false);
+              }}
             >
               {/* <div className="w-5 h-3 rounded-sm bg-gradient-to-r from-[#000] to-[#c00]" /> */}
               <Image
@@ -290,7 +299,11 @@ export default function Dashboard() {
           ))}
         </div>
       </div>
-      <div className="right absolute z-30 top-2 right-2 w-30 h-100 p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">
+      <div
+        className={`right absolute z-30  ${
+          isOpen ? "sm:right-2" : "sm:-right-100"
+        } top-2 right-2 w-30 h-100 p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md transition-all duration-300`}
+      >
         <div className="flex flex-col items-center gap-8 pb-5">
           <div className="flex flex-col items-center gap-1 cursor-pointer hover:text-white">
             <Shield size={28} />
@@ -376,6 +389,14 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* mobile display responsive items */}
+      <div className="nav_container sm:block lg:hidden absolute top-8 left-8 z-40">
+        <Menu
+          className="text-white bg-indigo-400 rounded-full p-3 w-12 h-12"
+          onClick={() => setIsOpen(!isOpen)}
+        />
       </div>
     </section>
   );
