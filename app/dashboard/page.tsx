@@ -24,22 +24,49 @@ const availableCountries = [
     name: "United Kingdom",
     lat: 55.3781,
     lng: -3.436,
+    ip: "102.45.198.27",
   },
   {
     img: "/country-svgs/ID.svg",
     name: "Indonesia",
     lat: -0.7893,
     lng: 113.9213,
+    ip: "187.64.93.140",
   },
-  { img: "/country-svgs/KR.svg", name: "Korea", lat: 35.9078, lng: 127.7669 },
-  { img: "/country-svgs/MY.svg", name: "Malaysia", lat: 4.2105, lng: 101.9758 },
-  { img: "/country-svgs/PT.svg", name: "Portugal", lat: 39.3999, lng: -8.2245 },
-  { img: "/country-svgs/TR.svg", name: "Turkey", lat: 38.9637, lng: 35.2433 },
+  {
+    img: "/country-svgs/KR.svg",
+    name: "Korea",
+    lat: 35.9078,
+    lng: 127.7669,
+    ip: "54.213.78.221",
+  },
+  {
+    img: "/country-svgs/MY.svg",
+    name: "Malaysia",
+    lat: 4.2105,
+    lng: 101.9758,
+    ip: "203.91.17.56",
+  },
+  {
+    img: "/country-svgs/PT.svg",
+    name: "Portugal",
+    lat: 39.3999,
+    lng: -8.2245,
+    ip: "77.142.199.85",
+  },
+  {
+    img: "/country-svgs/TR.svg",
+    name: "Turkey",
+    lat: 38.9637,
+    lng: 35.2433,
+    ip: "145.63.204.19",
+  },
   {
     img: "/country-svgs/US.svg",
     name: "United States",
     lat: 37.0902,
     lng: -95.7129,
+    ip: "219.87.134.72",
   },
 ];
 
@@ -50,6 +77,7 @@ const LeafletMap = dynamic(() => import("./components/LeafLetMap"), {
 export default function Dashboard() {
   const [lat, setLat] = useState<number>(55.3781);
   const [lng, setLng] = useState<number>(-3.436);
+  const [ip, setIp] = useState<string | null>(null);
 
   const [loading, setLoading] = useState(false);
   const [connected, setConnected] = useState(false);
@@ -77,6 +105,7 @@ export default function Dashboard() {
         setConnectedData({
           img: country.img,
           name: country.name,
+          ip: country.ip,
         });
       } else {
         setConnectedData(null); // fallback if not found
@@ -102,6 +131,19 @@ export default function Dashboard() {
   //     </div>
   //   );
   // }
+
+  useEffect(() => {
+    const fetchIP = async () => {
+      try {
+        const res = await fetch("https://api.ipify.org?format=json");
+        const data = await res.json();
+        setIp(data.ip);
+      } catch (err) {
+        console.error("Error fetching IP:", err);
+      }
+    };
+    fetchIP();
+  }, []);
   return (
     <section className="dashboard relative  h-screen overflow-hidden ">
       <div className="absolute top-0 left-0 w-full h-70 z-30 p-12">
@@ -306,7 +348,13 @@ export default function Dashboard() {
           <div className="flex gap-6 mt-2 text-sm">
             <div className="flex flex-col">
               <span className="opacity-70 text-blue-950">Your IP address</span>
-              <span className="font-bold text-blue-950">117.211.42.84</span>
+              {connected ? (
+                <span className="font-bold text-blue-950">
+                  {connectedData.ip}
+                </span>
+              ) : (
+                <span className="font-bold text-blue-950">{ip}</span>
+              )}
             </div>
             <div className="flex flex-col">
               <span className="opacity-70 text-blue-950">Country</span>
