@@ -15,7 +15,7 @@ import {
   Split,
   Settings,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const availableCountries = [
   {
@@ -46,12 +46,45 @@ export default function Dashboard() {
   const [lat, setLat] = useState<number>(55.3781);
   const [lng, setLng] = useState<number>(-3.436);
 
+  const [loading, setLoading] = useState(true);
+
   const handleSetLatLong = (lat: number, lng: number) => {
     setLat(lat);
     setLng(lng);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // 3 seconds
+
+    return () => clearTimeout(timer);
+  }, [loading]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin" />
+      </div>
+    );
+  }
   return (
     <section className="dashboard relative  h-screen overflow-hidden ">
+      <div className="absolute top-0 left-0 w-full h-70 z-30 p-12">
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#171732] to-transparent" />
+
+        {/* Content */}
+        <div className="relative flex flex-col items-center justify-start h-full text-white">
+          <span className="bg-green-500 text-black px-2 py-1 rounded-md text-xs font-semibold mb-2">
+            Fastest free server
+          </span>
+          <p className="text-sm opacity-80 mb-3">Auto-selected from 🇺🇸 🇯🇵 +2</p>
+          <button className="px-6 py-2 bg-[#6d4aff] hover:bg-[#5b39e3] rounded-md font-medium shadow-md">
+            Connect
+          </button>
+        </div>
+      </div>
       <LeafletMap lat={lat} lng={lng} />
       <div className="left absolute z-30 top-4 left-4 w-80 h-175 p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">
         {/* Search */}
