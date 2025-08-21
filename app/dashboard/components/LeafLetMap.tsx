@@ -48,7 +48,7 @@ export default function LeafletMap({ lat, lng }: mapTypes) {
   // }
   const [latitude, setLatitude] = useState(lat);
   const [longitude, setLongitude] = useState(lng);
-  const position = [latitude, longitude];
+  const position: [number, number] = [latitude, longitude];
 
   useEffect(() => {
     setLatitude(lat);
