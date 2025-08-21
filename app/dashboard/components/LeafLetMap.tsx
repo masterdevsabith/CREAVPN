@@ -66,7 +66,10 @@ export default function LeafletMap({ lat, lng }: mapTypes) {
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+        url={
+          (process.env.NEXT_PUBLIC_TILE_URL as string) ||
+          " https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+        }
         className="map-tiles"
       />
       <Marker position={position}>
