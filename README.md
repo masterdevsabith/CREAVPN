@@ -1,30 +1,63 @@
-Message from the creator :
+---
+# Next.js Project
 
-NAME : MUHAMMED SABITH AS
-CLASS : 12
-GITHUB : [view_my_github](https://github.com/masterdevsabith)
-LINKEDIN : [view_my_linkedin](https://www.linkedin.com/in/muhammedsabithas/)
-INSTAGRAM : [make_me_happy_by_following_me_on_instagram](https://www.instagram.com/sabiiii.fx/)
+## Overview
 
-MESSAGE FROM THE CREATOR :
-Hi have a nice day, this is a message from the developer of the website, this is a next js project, use npm run dev to run the server and you can see it on localhost:3000. following will be a small readme tour for the website.
+This project is a **Next.js application** built as part of a web development challenge. It demonstrates authentication with **Supabase**, a dashboard powered by **React Leaflet**, and an articles/blog section backed by Supabase tables.
+---
 
-possible endpoints : -[localhost:3000/articles](http://localhost:3000/articles) -[localhost:3000/auth/signup](http://localhost:3000/auth/signup) -[localhost:3000/dashboard](http://localhost:3000/dashboard)
+## Features
 
-dashboard :
-currently the dashboard is not protected using any middleware, since I see this as web development challenge, and I didn't want to complicate it. currently it's made on react leaflet, you can choose your fav country from the options and you can connect with it.
+- **Dashboard**
 
-articles:
-a blog section, data is collected from a subabase table
+  - Interactive map built with React Leaflet
+  - Select and connect to countries
+  - Currently not protected by middleware (planned improvement)
 
-auth/signup:
-I used supabase to make authentication, but I haven't implemented any middleware, in the near future I dream to do that.
+- **Articles**
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+  - Blog section powered by Supabase
+
+- **Authentication**
+
+  - Supabase authentication (sign-up flow)
+  - Middleware protection not yet implemented
+
+---
+
+## Endpoints
+
+- `/articles` → Blog section
+- `/auth/signup` → User sign-up
+- `/dashboard` → Interactive dashboard
+
+---
+
+## Tech Stack
+
+- Next.js
+- React Leaflet
+- Supabase (Auth + Database)
+- TypeScript
+- Tailwind CSS
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -36,4 +69,25 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+
+---
+
+## Notes
+
+- This project is for learning and experimentation.
+- Authentication and route protection will be improved in future updates.
+
+---
+
+## Author
+
+**Muhammed Sabith A.S**
+
+- GitHub: [masterdevsabith](https://github.com/masterdevsabith)
+- LinkedIn: [Muhammed Sabith A.S](https://www.linkedin.com/in/muhammedsabithas/)
+- Instagram: [sabiiii.fx](https://www.instagram.com/sabiiii.fx/)
+
+---
+
+Do you want me to also add a **preview image/banner section** at the top (like most polished READMEs have) to make it look even more professional?
