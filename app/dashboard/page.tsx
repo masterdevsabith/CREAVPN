@@ -162,7 +162,7 @@ export default function Dashboard() {
         </div>
       )}
 
-      <div className="left absolute z-30 top-4 left-4 w-80 h-175 p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">
+      <div className="left absolute z-30 top-4 left-4 w-80  p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">
         {/* Search */}
         <div className="flex items-center gap-2 bg-[#2a2a2f] rounded-md px-2 py-2 mb-4">
           <Search size={16} className="text-gray-400" />
@@ -241,7 +241,7 @@ export default function Dashboard() {
           ))}
         </div>
       </div>
-      <div className="right absolute z-30 top-2 right-2 w-50 h-100 p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">
+      <div className="right absolute z-30 top-2 right-2 w-30 h-100 p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">
         <div className="flex flex-col items-center gap-8 pb-5">
           <div className="flex flex-col items-center gap-1 cursor-pointer hover:text-white">
             <Shield size={28} />
@@ -264,7 +264,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="w-full border-t border-gray-700  pt-6 flex flex-col items-center gap-1 cursor-pointer hover:text-white">
+        <div className="w-full border-t border-gray-700 p-5  flex flex-col items-center gap-1 cursor-pointer hover:text-white">
           <Settings size={28} />
           <span className="text-xs">Settings</span>
         </div>
