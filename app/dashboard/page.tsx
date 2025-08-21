@@ -114,8 +114,13 @@ export default function Dashboard() {
 
         {/* Content */}
         <div className="relative flex flex-col items-center justify-start h-full text-white">
-          <span className="bg-green-500 text-white px-2 py-1 rounded-md text-xs font-semibold mb-2">
-            Fastest free server
+          <span className=" text-white px-2 py-1 rounded-md text-md font-semibold mb-2 flex items-center gap-3">
+            <Zap
+              className="bg-green-500 w-12 h-8 p-1 rounded-sm text-black"
+              size={40}
+              fill="black"
+            />{" "}
+            Fastest Free Server
           </span>
           {connectedData && (
             <p className="text-sm text-black opacity-80 mb-3 flex items-center gap-1">
@@ -162,7 +167,7 @@ export default function Dashboard() {
         </div>
       )}
 
-      <div className="left absolute z-30 top-4 left-4 w-80  p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">
+      <div className="left absolute z-50 top-4 left-4 w-80  p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">
         {/* Search */}
         <div className="flex items-center gap-2 bg-[#2a2a2f] rounded-md px-2 py-2 mb-4">
           <Search size={16} className="text-gray-400" />
@@ -267,6 +272,51 @@ export default function Dashboard() {
         <div className="w-full border-t border-gray-700 p-5  flex flex-col items-center gap-1 cursor-pointer hover:text-white">
           <Settings size={28} />
           <span className="text-xs">Settings</span>
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 right-0 w-full h-40 z-30 p-6">
+        {/* Top Gradient Overlay */}
+        <div
+          className={`absolute inset-0 bg-gradient-to-t ${
+            connected ? "from-[#24ff2b77]" : "from-[#ff3f3f99]"
+          } to-transparent`}
+        />
+        {/* Bottom Gradient Overlay */}
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-[#00000055] to-transparent" /> */}
+
+        {/* Content */}
+        <div className="relative flex flex-col items-end justify-center h-full text-white gap-2">
+          <p className="flex items-center gap-2 text-sm font-medium">
+            <span
+              className={`w-2 h-2 rounded-full ${
+                connected ? "bg-green-800" : "bg-red-500"
+              }`}
+            />
+            {connected ? (
+              <span className="text-green-800">Secure</span>
+            ) : (
+              <span className="text-red-600">Unprotected</span>
+            )}
+          </p>
+          <p className="text-xs opacity-80 text-blue-950">
+            Encrypt your online activity by connecting to VPN.
+          </p>
+
+          <div className="flex gap-6 mt-2 text-sm">
+            <div className="flex flex-col">
+              <span className="opacity-70 text-blue-950">Your IP address</span>
+              <span className="font-bold text-blue-950">117.211.42.84</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="opacity-70 text-blue-950">Country</span>
+              <span className="font-bold text-blue-950">India</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="opacity-70 text-blue-950">Provider</span>
+              <span className="font-bold text-blue-950">BSNL</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
