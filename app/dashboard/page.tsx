@@ -1,3 +1,6 @@
+"use client";
+
+import Image from "next/image";
 import LeafletMap from "./components/LeafLetMap";
 
 import {
@@ -12,11 +15,44 @@ import {
   Split,
   Settings,
 } from "lucide-react";
+import { useState } from "react";
+
+const availableCountries = [
+  {
+    img: "/country-svgs/GB.svg",
+    name: "United Kingdom",
+    lat: 55.3781,
+    lng: -3.436,
+  },
+  {
+    img: "/country-svgs/ID.svg",
+    name: "Indonesia",
+    lat: -0.7893,
+    lng: 113.9213,
+  },
+  { img: "/country-svgs/KR.svg", name: "Korea", lat: 35.9078, lng: 127.7669 },
+  { img: "/country-svgs/MY.svg", name: "Malaysia", lat: 4.2105, lng: 101.9758 },
+  { img: "/country-svgs/PT.svg", name: "Portugal", lat: 39.3999, lng: -8.2245 },
+  { img: "/country-svgs/TR.svg", name: "Turkey", lat: 38.9637, lng: 35.2433 },
+  {
+    img: "/country-svgs/US.svg",
+    name: "United States",
+    lat: 37.0902,
+    lng: -95.7129,
+  },
+];
 
 export default function Dashboard() {
+  const [lat, setLat] = useState<number>(55.3781);
+  const [lng, setLng] = useState<number>(-3.436);
+
+  const handleSetLatLong = (lat: number, lng: number) => {
+    setLat(lat);
+    setLng(lng);
+  };
   return (
     <section className="dashboard relative  h-screen overflow-hidden ">
-      <LeafletMap />
+      <LeafletMap lat={lat} lng={lng} />
       <div className="left absolute z-30 top-4 left-4 w-80 h-175 p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">
         {/* Search */}
         <div className="flex items-center gap-2 bg-[#2a2a2f] rounded-md px-2 py-2 mb-4">
@@ -78,25 +114,22 @@ export default function Dashboard() {
             <span>Fastest country</span>
           </div>
 
-          <div className="flex items-center gap-3 p-2 rounded-md hover:bg-[#2a2a2f] cursor-pointer">
-            <div className="w-5 h-3 rounded-sm bg-gradient-to-r from-[#000] to-[#c00]" />
-            <span>Afghanistan</span>
-          </div>
-
-          <div className="flex items-center gap-3 p-2 rounded-md hover:bg-[#2a2a2f] cursor-pointer">
-            <div className="w-5 h-3 rounded-sm bg-red-700" />
-            <span>Albania</span>
-          </div>
-
-          <div className="flex items-center gap-3 p-2 rounded-md hover:bg-[#2a2a2f] cursor-pointer">
-            <div className="w-5 h-3 rounded-sm bg-green-700" />
-            <span>Algeria</span>
-          </div>
-
-          <div className="flex items-center gap-3 p-2 rounded-md hover:bg-[#2a2a2f] cursor-pointer">
-            <div className="w-5 h-3 rounded-sm bg-red-800" />
-            <span>Angola</span>
-          </div>
+          {availableCountries.map((countrydata, idx) => (
+            <div
+              key={idx}
+              className="flex items-center gap-3 p-2 rounded-md hover:bg-[#2a2a2f] cursor-pointer"
+              onClick={() => handleSetLatLong(countrydata.lat, countrydata.lng)}
+            >
+              {/* <div className="w-5 h-3 rounded-sm bg-gradient-to-r from-[#000] to-[#c00]" /> */}
+              <Image
+                src={countrydata.img}
+                alt={countrydata.name}
+                width={20}
+                height={20}
+              />
+              <span>{countrydata.name}</span>
+            </div>
+          ))}
         </div>
       </div>
       <div className="right absolute z-30 top-2 right-2 w-50 h-100 p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">

@@ -6,39 +6,54 @@ import {
   TileLayer,
   Marker,
   Popup,
+  useMap,
   useMapEvents,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { mapTypes } from "@/app/types/uiTypes";
 
-export default function LeafletMap() {
+function ChangeView({ center }: { center: [number, number] }) {
+  const map = useMap();
+  useEffect(() => {
+    map.setView(center, map.getZoom()); // fly to new center
+  }, [center, map]);
+  return null;
+}
+
+export default function LeafletMap({ lat, lng }: mapTypes) {
   L.Icon.Default.mergeOptions({
     iconRetinaUrl: "/leaflet/marker-icon-2x.png",
     iconUrl: "/leaflet/marker-icon.png",
     shadowUrl: "/leaflet/marker-shadow.png",
   });
 
-  function LocationMarker() {
-    const [position, setPosition] = useState(null);
-    const map = useMapEvents({
-      click() {
-        map.locate();
-      },
-      locationfound(e) {
-        setPosition(e.latlng);
-        map.flyTo(e.latlng, map.getZoom());
-      },
-    });
+  // function LocationMarker() {
+  //   const [position, setPosition] = useState(null);
+  //   const map = useMapEvents({
+  //     click() {
+  //       map.locate();
+  //     },
+  //     locationfound(e) {
+  //       setPosition(e.latlng);
+  //       map.flyTo(e.latlng, map.getZoom());
+  //     },
+  //   });
 
-    return position === null ? null : (
-      <Marker position={position}>
-        <Popup>You are here</Popup>
-      </Marker>
-    );
-  }
+  //   return position === null ? null : (
+  //     <Marker position={position}>
+  //       <Popup>You are here</Popup>
+  //     </Marker>
+  //   );
+  // }
+  const [latitude, setLatitude] = useState(lat);
+  const [longitude, setLongitude] = useState(lng);
+  const position = [latitude, longitude];
 
-  const position = [51.505, -0.09];
-
+  useEffect(() => {
+    setLatitude(lat);
+    setLongitude(lng);
+  }, [lat, lng, position]);
   return (
     <MapContainer
       center={position}
@@ -60,6 +75,7 @@ export default function LeafletMap() {
       </Marker>
 
       {/* <LocationMarker /> */}
+      <ChangeView center={position} />
     </MapContainer>
   );
 }

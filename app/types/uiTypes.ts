@@ -64,3 +64,8 @@ export interface PricingCardProps {
   isHighlighted?: boolean;
   className?: string;
 }
+
+export interface mapTypes {
+  lat: number;
+  lng: number;
+}
