@@ -70,6 +70,7 @@ export default function Navbar() {
             <Button
               content="Get Started"
               className="border-neutral-600 hover:bg-white/20"
+              onClick={() => router.push("/auth/signup")}
             />
           </div>
         </div>

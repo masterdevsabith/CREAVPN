@@ -216,7 +216,7 @@ export default function Dashboard() {
       <div
         className={`left  absolute z-50  ${
           isOpen ? "sm:left-4" : "sm:-left-100"
-        } top-4 lg:left-4 w-80  p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md transition-all duration-300`}
+        } top-4 lg:left-4 w-80  p-4 bg-[#1a1a1f]/50 backdrop-blur-md rounded-md transition-all duration-300`}
       >
         {/* Search */}
         <div className="flex items-center gap-2 bg-[#2a2a2f] rounded-md px-2 py-2 mb-4">
@@ -302,7 +302,7 @@ export default function Dashboard() {
       <div
         className={`right absolute z-30  ${
           isOpen ? "sm:right-2" : "sm:-right-100"
-        } top-2 right-2 w-30 h-100 p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md transition-all duration-300`}
+        } top-2 lg:right-2 w-30 h-100 p-4 bg-[#1a1a1f]/50 backdrop-blur-md rounded-md transition-all duration-300`}
       >
         <div className="flex flex-col items-center gap-8 pb-5">
           <div className="flex flex-col items-center gap-1 cursor-pointer hover:text-white">
