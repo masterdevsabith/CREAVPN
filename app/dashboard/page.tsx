@@ -46,28 +46,33 @@ export default function Dashboard() {
   const [lat, setLat] = useState<number>(55.3781);
   const [lng, setLng] = useState<number>(-3.436);
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handleSetLatLong = (lat: number, lng: number) => {
-    setLat(lat);
-    setLng(lng);
+    setLoading(true); // show loader immediately
+
+    setTimeout(() => {
+      setLat(lat);
+      setLng(lng);
+      setLoading(false); // hide loader once location updates
+    }, 1500); // delay before moving map
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000); // 3 seconds
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 3000); // 3 seconds
 
-    return () => clearTimeout(timer);
-  }, [loading]);
+  //   return () => clearTimeout(timer);
+  // }, [loading]);
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin" />
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="flex items-center justify-center h-screen">
+  //       <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin" />
+  //     </div>
+  //   );
+  // }
   return (
     <section className="dashboard relative  h-screen overflow-hidden ">
       <div className="absolute top-0 left-0 w-full h-70 z-30 p-12">
@@ -86,6 +91,14 @@ export default function Dashboard() {
         </div>
       </div>
       <LeafletMap lat={lat} lng={lng} />
+
+      {/* Overlay loader */}
+      {loading && (
+        <div className="absolute inset-0 z-40 flex items-center justify-center bg-[#000]/30 ">
+          <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin" />
+        </div>
+      )}
+
       <div className="left absolute z-30 top-4 left-4 w-80 h-175 p-4 bg-[#1a1a1f]/90 backdrop-blur-md rounded-md">
         {/* Search */}
         <div className="flex items-center gap-2 bg-[#2a2a2f] rounded-md px-2 py-2 mb-4">
