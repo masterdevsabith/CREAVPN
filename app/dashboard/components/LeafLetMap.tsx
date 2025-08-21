@@ -42,8 +42,11 @@ export default function LeafletMap() {
   return (
     <MapContainer
       center={position}
-      zoom={13}
+      zoom={3}
       scrollWheelZoom={false}
+      zoomControl={false}
+      doubleClickZoom={false}
+      dragging={false}
       className="w-full h-full z-1"
     >
       <TileLayer
@@ -56,7 +59,7 @@ export default function LeafletMap() {
         </Popup>
       </Marker>
 
-      <LocationMarker />
+      {/* <LocationMarker /> */}
     </MapContainer>
   );
 }
