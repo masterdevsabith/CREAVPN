@@ -15,6 +15,8 @@ import {
   Glasses,
   Split,
   Settings,
+  Lock,
+  Unlock,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -150,7 +152,7 @@ export default function Dashboard() {
         {/* Gradient Overlay */}
         <div
           className={`absolute inset-0 bg-gradient-to-b ${
-            connected ? "from-[#24ff2b77]" : "from-[#ff3f3f99]"
+            connected ? "from-[#24ff2b35]" : "from-[#ff3f3f5f]"
           } to-transparent`}
         />
 
@@ -165,7 +167,7 @@ export default function Dashboard() {
             Fastest Free Server
           </span>
           {connectedData && (
-            <p className="text-sm text-black opacity-80 mb-3 flex items-center gap-1">
+            <p className="text-sm text-[var(--text-color)] opacity-80 mb-3 flex items-center gap-1">
               Connected to{" "}
               <Image
                 src={connectedData?.img}
@@ -317,52 +319,60 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-0 w-full h-40 z-30 p-6">
+      <div className="absolute bottom-0 right-0 w-full h-40 z-30 p-6 ">
         {/* Top Gradient Overlay */}
         <div
           className={`absolute inset-0 bg-gradient-to-t ${
-            connected ? "from-[#24ff2b77]" : "from-[#ff3f3f99]"
+            connected ? "from-[#24ff2b40]" : "from-[#ff3f3f51]"
           } to-transparent`}
         />
         {/* Bottom Gradient Overlay */}
         {/* <div className="absolute inset-0 bg-gradient-to-t from-[#00000055] to-transparent" /> */}
 
         {/* Content */}
-        <div className="relative flex flex-col items-end justify-center h-full text-white gap-2">
-          <p className="flex items-center gap-2 text-sm font-medium">
-            <span
-              className={`w-2 h-2 rounded-full ${
-                connected ? "bg-green-800" : "bg-red-500"
-              }`}
-            />
+        <div className="relative flex flex-col items-end justify-center h-full text-white gap-2 ">
+          <p className="flex items-center text-center gap-2 text-sm font-medium backdrop-blur-xs">
+            <span className={` `}>
+              {connected ? (
+                <Lock size={20} className="text-white" />
+              ) : (
+                <Unlock size={20} className="text-white" />
+              )}
+            </span>
             {connected ? (
-              <span className="text-green-800">Secure</span>
+              <span className="text-[var(--text-color)]">Secure</span>
             ) : (
-              <span className="text-red-600">Unprotected</span>
+              <span className="text-[var(--text-color)]">Unprotected</span>
             )}
           </p>
-          <p className="text-xs opacity-80 text-blue-950">
+          <p className="text-xs opacity-80 text-[var(--text-color)] backdrop-blur-xs">
             Encrypt your online activity by connecting to VPN.
           </p>
 
-          <div className="flex gap-6 mt-2 text-sm">
+          <div className="flex gap-6 mt-2 text-sm backdrop-blur-xs">
             <div className="flex flex-col">
-              <span className="opacity-70 text-blue-950">Your IP address</span>
+              <span className="opacity-70 text-[var(--text-color)]">
+                Your IP address
+              </span>
               {connected ? (
-                <span className="font-bold text-blue-950">
+                <span className="font-bold text-[var(--text-color)]">
                   {connectedData.ip}
                 </span>
               ) : (
-                <span className="font-bold text-blue-950">{ip}</span>
+                <span className="font-bold text-[var(--text-color)]">{ip}</span>
               )}
             </div>
             <div className="flex flex-col">
-              <span className="opacity-70 text-blue-950">Country</span>
-              <span className="font-bold text-blue-950">India</span>
+              <span className="opacity-70 text-[var(--text-color)]">
+                Country
+              </span>
+              <span className="font-bold text-[var(--text-color)]">India</span>
             </div>
             <div className="flex flex-col">
-              <span className="opacity-70 text-blue-950">Provider</span>
-              <span className="font-bold text-blue-950">BSNL</span>
+              <span className="opacity-70 text-[var(--text-color)]">
+                Provider
+              </span>
+              <span className="font-bold text-[var(--text-color)]">BSNL</span>
             </div>
           </div>
         </div>

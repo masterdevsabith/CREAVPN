@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --text-color: #fff;
 }
 
 @theme inline {
@@ -35,3 +36,14 @@ body {
 .no-scroll-bar::-webkit-scrollbar {
   width: 0;
 }
+
+/*leaflet map*/
+/* .leaflet-container {
+  background: #000;
+}
+.leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+} */
