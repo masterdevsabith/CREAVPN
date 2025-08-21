@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import LeafletMap from "./components/LeafLetMap";
+// import LeafletMap from "./components/LeafLetMap";
+import dynamic from "next/dynamic";
 
 import {
   Search,
@@ -42,11 +43,16 @@ const availableCountries = [
   },
 ];
 
+const LeafletMap = dynamic(() => import("./components/LeafLetMap"), {
+  ssr: false,
+});
+
 export default function Dashboard() {
   const [lat, setLat] = useState<number>(55.3781);
   const [lng, setLng] = useState<number>(-3.436);
 
   const [loading, setLoading] = useState(false);
+  const [connected, setConnected] = useState(false);
 
   const handleSetLatLong = (lat: number, lng: number) => {
     setLoading(true); // show loader immediately
@@ -57,6 +63,8 @@ export default function Dashboard() {
       setLoading(false); // hide loader once location updates
     }, 1500); // delay before moving map
   };
+
+  const handleConnect = (lat: number, lng: number) => {};
 
   // useEffect(() => {
   //   const timer = setTimeout(() => {
