@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/Button";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Globe, Menu, X } from "lucide-react";
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -42,9 +42,10 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="right sm:hidden lg:block">
+      <div className="right sm:hidden lg:flex  items-center gap-2">
+        <Globe />
         <Button
-          content="Get Started"
+          content="Get CreaVPN"
           className="border-neutral-600 hover:bg-white/20"
           onClick={() => router.push("/auth/signup")}
         />

@@ -21,7 +21,7 @@ export default function Home() {
       <section className="special_bg min-h-screen bg-[radial-gradient(ellipse_at_center,_#0B172F,_#0a0f1c)] text-white">
         <Navbar />
         <Hero />
-        <Cards />
+        {/* <Cards />
         <Companies />
         <SecureBrowsing />
         <InnovativeFeature />
@@ -29,7 +29,7 @@ export default function Home() {
         <Pricing />
         <Faq />
         <Banner />
-        <Footer />
+        <Footer /> */}
       </section>
       <div
         className="chat_box fixed bottom-10 right-10 w-16 h-16 bg-[#155DFC] hover:bg-[#0c4bd2] rounded-full flex items-center justify-center z-5"
