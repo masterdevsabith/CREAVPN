@@ -14,6 +14,7 @@ import Footer from "./components/includes/Footer";
 import { MessageSquare, X } from "lucide-react";
 import { useState } from "react";
 import WhyChooseUs from "./components/WhyChooseCreaVPN";
+import HowTo from "./components/HowTo";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +24,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <WhyChooseUs />
+        <HowTo />
         {/* <Cards /> */}
         {/* <Companies /> */}
         {/* <SecureBrowsing /> */}

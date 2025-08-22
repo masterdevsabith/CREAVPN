@@ -50,7 +50,7 @@ const rows = [
 ];
 export default function WhyChooseUs() {
   return (
-    <section className="whychooseus py-20 ">
+    <section className="whychooseus pt-18 pb-36 ">
       <div className="top flex flex-col items-center mb-12">
         <h2 className="text-5xl">Why choose CREAVPN?</h2>
         <p className="text-md text-[var(--text-dim-color)]">
