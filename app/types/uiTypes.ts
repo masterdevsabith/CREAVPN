@@ -7,6 +7,14 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
+export interface LinkButtonProps {
+  content: string;
+  href?: string;
+  icon?: ReactNode;
+  className?: string;
+  onClick?: () => void;
+}
+
 export interface StatusProps {
   content: string;
   classname?: string;

@@ -1,6 +1,7 @@
 import { Download } from "lucide-react";
 import Button from "./ui/Button";
 import Statusbar from "./ui/Statusbar";
+import LinkButton from "./ui/LinkButton";
 
 export default function Hero() {
   return (
@@ -18,8 +19,14 @@ export default function Hero() {
           industry-leading security and blazing-fast connections on every
           platform only with CreaVPN.
         </p>
-        <Button
+        {/* <Button
           content=" Download CreaVPN"
+          icon={<Download />}
+          className="py-4 bg-blue-700 border-blue-600"
+        /> */}
+        <LinkButton
+          content="Download CreaVPN"
+          href="/downloads/creavpn.exe"
           icon={<Download />}
           className="py-4 bg-blue-700 border-blue-600"
         />
