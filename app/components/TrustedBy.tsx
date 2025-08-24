@@ -26,7 +26,7 @@ const companies = [
 export default function TrustedBy() {
   return (
     <section className="trusted_by relative pb-18 overflow-hidden">
-      <div className="top mb-8">
+      <div className="top mb-16">
         <h3 className="text-3xl font-semibold text-center flex flex-col items-center ">
           Trusted by Companies around <br /> the world
         </h3>
