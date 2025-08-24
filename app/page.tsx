@@ -9,13 +9,14 @@ import { useState } from "react";
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   return (
+    // bg-[radial-gradient(ellipse_at_center,_#0B172F,_#0a0f1c)]
     <main className="relative">
-      <section className="special_bg min-h-screen bg-[radial-gradient(ellipse_at_center,_#0B172F,_#0a0f1c)] text-white">
+      <section className=" min-h-screen  text-white">
         <Navbar />
         <Hero />
       </section>
       <div
-        className="chat_box fixed bottom-10 right-10 w-16 h-16 bg-[#155DFC] hover:bg-[#0c4bd2] rounded-full flex items-center justify-center z-5"
+        className="chat_box fixed bottom-10 right-10 w-16 h-16 bg-[var(--bg-premium)] hover:bg-[var(--bg-premium-hover)] rounded-full flex items-center justify-center z-5"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? (
