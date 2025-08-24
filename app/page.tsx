@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Footer from "./components/includes/Footer";
 import { MessageSquare, X } from "lucide-react";
 import { useState } from "react";
+import Preview from "./components/Preview";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +15,7 @@ export default function Home() {
       <section className=" min-h-screen  text-white">
         <Navbar />
         <Hero />
+        <Preview />
       </section>
       <div
         className="chat_box fixed bottom-10 right-10 w-16 h-16 bg-[var(--bg-premium)] hover:bg-[var(--bg-premium-hover)] rounded-full flex items-center justify-center z-5"
