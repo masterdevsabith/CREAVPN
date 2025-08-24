@@ -2,19 +2,9 @@
 
 import Navbar from "./components/includes/Navbar";
 import Hero from "./components/Hero";
-import Cards from "./components/Cards";
-import Companies from "./components/Companies";
-import SecureBrowsing from "./components/SecureBrowsing";
-import InnovativeFeature from "./components/InnovativeFeature";
-import Map from "./components/Map";
-import Pricing from "./components/Pricing";
-import Faq from "./components/Faq";
-import Banner from "./components/Banner";
 import Footer from "./components/includes/Footer";
 import { MessageSquare, X } from "lucide-react";
 import { useState } from "react";
-import WhyChooseUs from "./components/WhyChooseCreaVPN";
-import HowTo from "./components/HowTo";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,17 +13,6 @@ export default function Home() {
       <section className="special_bg min-h-screen bg-[radial-gradient(ellipse_at_center,_#0B172F,_#0a0f1c)] text-white">
         <Navbar />
         <Hero />
-        <WhyChooseUs />
-        <HowTo />
-        {/* <Cards /> */}
-        {/* <Companies /> */}
-        {/* <SecureBrowsing /> */}
-        {/* <InnovativeFeature /> */}
-        {/* <Map /> */}
-        {/* <Pricing /> */}
-        {/* <Faq /> */}
-        {/* <Banner /> */}
-        {/* <Footer /> */}
       </section>
       <div
         className="chat_box fixed bottom-10 right-10 w-16 h-16 bg-[#155DFC] hover:bg-[#0c4bd2] rounded-full flex items-center justify-center z-5"
