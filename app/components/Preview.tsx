@@ -17,7 +17,7 @@ export default function Preview() {
     }
   };
   return (
-    <section className="video_preview">
+    <section className="video_preview pb-18">
       <div className="video_container group relative w-full flex items-center justify-center p-6">
         <video
           ref={videoRef}
