@@ -63,12 +63,12 @@ export default function FAQ() {
     <section className="faq px-0 xl:px-12 py-18">
       <div className="three_feature_top flex items-center justify-center">
         <div className="left w-1/2 px-20 border-r border-neutral-500">
-          <h4 className="text-4xl mb-12">Most VPNs are</h4>
+          <h4 className="sm:text-3xl lg:text-4xl mb-12">Most VPNs are</h4>
           <ul>
             {items.map((item, index) => (
               <li
                 key={index}
-                className={`text-2xl ml-5 mb-2 transition-colors duration-300 ${
+                className={`text-xl lg:text-2xl ml-5 mb-2 transition-colors duration-300 ${
                   index === activeIndex
                     ? "text-[var(--text-dim-color)] font-semibold"
                     : "text-[#5c5c5c]"

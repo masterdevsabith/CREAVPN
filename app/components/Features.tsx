@@ -41,16 +41,15 @@ export default function Features() {
   return (
     <section className="features px-12 py-18">
       <div className="top mb-12 text-left">
-        <h3 className="text-5xl font-semibold">
+        <h3 className="text-5xl font-semibold lg:max-w-[60%] xl:max-w-[40%]">
           <span className="text-[var(--text-premium)] text-5xl font-semibold">
             Everything you need to{" "}
           </span>
-          protect <br />
-          your privacy
+          protect your privacy
         </h3>
       </div>
 
-      <section className="features grid grid-cols-1 md:grid-cols-3 sm:gap-5 xl:gap-12 p-0 xl:p-8">
+      <section className="features grid md:grid-cols-2 lg:grid-cols-3 sm:gap-5 xl:gap-12 p-0 xl:p-8">
         {vpnFeatures.map((feature, index) => (
           <div
             key={index}

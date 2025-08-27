@@ -56,7 +56,7 @@ export default function Navbar() {
       </div>
 
       {isOpen ? (
-        <div className="small_screen_menu border-l-1 border-neutral-700 absolute top-0 right-0 bg-[#0A1327]/20 backdrop-blur-sm sm:w-1/2 md:w-1/3 h-screen flex items-center justify-center z-50 ">
+        <div className="small_screen_menu border-l-1 border-neutral-700 absolute top-0 right-0 bg-[#000]/80 backdrop-blur-sm sm:w-1/2 md:w-1/3 h-screen flex items-center justify-center z-50 ">
           <X className="absolute top-5 left-5" onClick={handleOpen} />
           <div className="navs flex flex-col items-center gap-12">
             <ul className="flex flex-col items-start gap-4 ">
