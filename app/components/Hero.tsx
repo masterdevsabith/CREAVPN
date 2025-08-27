@@ -5,7 +5,7 @@ import LinkButton from "./ui/LinkButton";
 
 export default function Hero() {
   return (
-    <section className="hero_section w-full h-screen flex items-start px-12 pt-18">
+    <section className="hero_section w-full h-160  flex items-start px-12 pt-18">
       <div className="left  text-left flex flex-col items-start">
         <Statusbar
           content="CreaVPN version 2.0 is available"
