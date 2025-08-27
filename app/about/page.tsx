@@ -166,10 +166,7 @@ export default function AboutPage() {
               products for everyone.
             </p>
 
-            <LinkButton
-              content="Join Now"
-              className="py-4 bg-[var(--bg-premium)] border-[var(--bg-premium)] bg-[radial-gradient(circle_at_center,_#111,_#333)]"
-            />
+            <LinkButton content="Join Now" className="py-3 " />
           </div>
           <div className="right">
             <Image

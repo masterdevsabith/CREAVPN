@@ -28,7 +28,7 @@ export default function Hero() {
           content="Download CreaVPN"
           href="/downloads/creavpn.exe"
           icon={<Download />}
-          className="py-4 bg-[var(--bg-premium)] border-[var(--bg-premium)] bg-[radial-gradient(circle_at_center,_#111,_#333)]"
+          className="py-4   "
         />
       </div>
       <div className="special_bg right w-full h-full hidden lg:block"></div>
