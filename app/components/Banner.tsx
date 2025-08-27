@@ -7,7 +7,7 @@ export default function Banner() {
         <h2 className="font-semibold text-4xl max-w-[90%] md:max-w-[60%] xl:max-w-[40%] mb-5">
           Let's start your privacy journey from here !!!
         </h2>
-        <LinkButton content="Sign Up Now" className="py-3 " />
+        <LinkButton content="Get Started" className="py-3 " />
       </div>
     </section>
   );

@@ -43,8 +43,8 @@ export default function PricingPage() {
   return (
     <>
       <Navbar />
-      <section className="pricing_page px-30 py-18">
-        <div className="top mb-16 flex flex-col items-center text-center">
+      <section className="pricing_page px-30 py-8">
+        <div className="top mb-8 flex flex-col items-center text-center">
           <h3 className="text-3xl font-semibold text-center flex flex-col items-center max-w-[40%] ">
             Kickstart your privacy journey by premium features
           </h3>
