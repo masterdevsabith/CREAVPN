@@ -8,7 +8,7 @@ export default function ChatBox() {
   return (
     <>
       <div
-        className="chat_box fixed bottom-10 right-10 w-16 h-16 bg-[var(--bg-premium)] hover:bg-[var(--bg-premium-hover)] rounded-full flex items-center justify-center z-500"
+        className="chat_box fixed bottom-20 right-10 w-16 h-16 bg-[var(--bg-premium)] hover:bg-[var(--bg-premium-hover)] rounded-full flex items-center justify-center z-500"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? (
