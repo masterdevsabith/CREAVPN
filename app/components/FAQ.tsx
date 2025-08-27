@@ -60,7 +60,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="faq px-12 py-18">
+    <section className="faq px-0 xl:px-12 py-18">
       <div className="three_feature_top flex items-center justify-center">
         <div className="left w-1/2 px-20 border-r border-neutral-500">
           <h4 className="text-4xl mb-12">Most VPNs are</h4>
@@ -80,13 +80,13 @@ export default function FAQ() {
           </ul>
         </div>
         <div className="right w-1/2 px-20">
-          <p className="text-md text-[var(--text-premium)]">
+          <p className="text-xl xl:text-md text-[var(--text-premium)]">
             {items[activeIndex].description}
           </p>
         </div>
       </div>
       <div className="faq_bottom px-20">
-        <h2 className="text-6xl max-w-[60%] text-left mt-20 mb-12">
+        <h2 className="text-6xl w-full xl:max-w-[60%] text-left mt-20 mb-12">
           Questions we think you might like answers to
         </h2>
         <div className="faqs">

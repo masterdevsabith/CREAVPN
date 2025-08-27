@@ -50,14 +50,16 @@ export default function Features() {
         </h3>
       </div>
 
-      <section className="features grid grid-cols-1 md:grid-cols-3 gap-12 p-8">
+      <section className="features grid grid-cols-1 md:grid-cols-3 sm:gap-5 xl:gap-12 p-0 xl:p-8">
         {vpnFeatures.map((feature, index) => (
           <div
             key={index}
             className="flex flex-col items-center justify-center group min-h-100 text-center p-6 rounded-2xl bg-black/80 border border-gray-800 hover:border-gray-600 shadow-lg hover:shadow-xl transition"
           >
             <feature.icon className="w-26 h-26 text-neutral-400 group-hover:text-white transition-all duration-200 mb-12 p-5 border border-[var(--bg-premium)] rounded-sm" />
-            <h3 className="text-4xl font-semibold mb-6">{feature.title}</h3>
+            <h3 className="text-3xl lg:text-4xl font-semibold mb-6">
+              {feature.title}
+            </h3>
             <p className="text-gray-400 text-sm max-w-[80%]">
               {feature.description}
             </p>
