@@ -54,9 +54,9 @@ const quotations = [
 
 export default function AboutPage() {
   return (
-    <section className="about_page ">
+    <section className="about_page overflow-hidden min-h-screen text-white">
       <Navbar />
-      <section className="about_hero flex flex-col items-center justify-center py-20">
+      <section className="about_hero flex flex-col items-center justify-center px-12 py-20">
         <div className="top mb-12 flex items-start justify-center">
           <Image src={"/icons/logo.svg"} alt="logo" width={300} height={300} />
           <span>&trade;</span>
@@ -90,7 +90,7 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
-      <section className="transparency_and_responsibility flex flex-col items-center justify-center py-12">
+      <section className="transparency_and_responsibility flex flex-col items-center justify-center px-12 py-12">
         <div className="top flex flex-col items-center text-center ">
           <h2 className="max-w-4xl text-center text-5xl mb-4">
             Transparency & social responsibility
@@ -102,11 +102,11 @@ export default function AboutPage() {
             research and published annual reviews. Explore our collection.
           </p>
         </div>
-        <div className="mid grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
           {infoCards.map((card, idx) => (
             <div
               key={idx}
-              className="infocard min-h-50 min-w-[500px] bg-[var(--bg-premium)]/50 hover:bg-neutral-200/14 backdrop-blur-lg p-5 rounded-md flex flex-col items-start justify-between"
+              className="infocard min-h-50 lg:min-w-[460px] xl:min-w-[500px] bg-[var(--bg-premium)]/50 hover:bg-neutral-200/14 backdrop-blur-lg p-5 rounded-md flex flex-col items-start justify-between"
             >
               <h3 className="text-xl font-semibold">{card.title}</h3>
               <p className="text-sm text-neutral-300 max-w-sm">
@@ -119,8 +119,8 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
-      <section className="open_internet flex flex-col items-center justify-center py-12">
-        <div className="top flex flex-col items-center text-center ">
+      <section className="open_internet flex flex-col items-center justify-center px-12 py-12">
+        <div className="top flex flex-col items-center text-center mb-4">
           <h2 className="max-w-4xl text-center text-5xl mb-4">
             Our support for an open internet
           </h2>
@@ -130,11 +130,11 @@ export default function AboutPage() {
             that advocate for safeguarding online freedom and transparency.
           </p>
         </div>
-        <div className="bottom flex items-center justify-center gap-20">
+        <div className="bottom flex items-center flex-col md:flex-row justify-center gap-5 lg:gap-20">
           {quotations.map((quotation, idx) => (
             <div
               key={idx}
-              className="quote_box relative bg-[var(--bg-premium)]/50 backdrop-blur-lg flex flex-col items-center p-5 rounded-md hover:shadow-xl/30"
+              className="quote_box relative bg-[var(--bg-premium)]/50 backdrop-blur-lg flex flex-col items-center p-5 rounded-md hover:shadow-xl/30 min-h-[280px]"
             >
               <Image
                 src={quotation.image}
@@ -157,11 +157,11 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
-      <section className="join_our_team flex items-center justify-center mt-30 py-12">
+      <section className="join_our_team flex items-center justify-center mt-5 lg:mt-18 xl:mt-30 px-12 py-12">
         <div className="container relative flex items-center justify-between  bg-[var(--bg-premium)]/40 p-12 max-w-6xl rounded-2xl">
           <div className="left flex flex-col items-start justify-between">
             <h2 className="text-3xl font-semibold mb-2">Join our team</h2>
-            <p className="text-md text-neutral-200 max-w-lg mb-6">
+            <p className="text-md text-neutral-200 max-w-3xs md:max-w-sm lg:max-w-lg mb-6">
               Become a part of our mission to build the most beloved security
               products for everyone.
             </p>
@@ -177,7 +177,7 @@ export default function AboutPage() {
               alt="a_person"
               width={700}
               height={700}
-              className="absolute bottom-0 -right-16"
+              className="absolute bottom-0 -right-12 w-100  md:-right-28 md:w-120 lg:-right-12 lg:w-140 xl:-right-16 xl:w-160"
             />
           </div>
         </div>
