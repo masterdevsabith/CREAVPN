@@ -8,6 +8,9 @@
   --text-premium: #a1a1a1;
   --bg-premium: #393939;
   --bg-premium-hover: #424040;
+  --element-bg: #101010;
+  --element-bg2: #111111;
+  --bg-pricing: #1c1c1c;
 }
 
 @theme inline {

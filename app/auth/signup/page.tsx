@@ -38,10 +38,10 @@ export default function SignUpPage() {
   };
 
   return (
-    <section className="sign_up_page special_bg bg-[radial-gradient(ellipse_at_center,_#0B172F,_#0a0f1c)]">
+    <section className="sign_up_page ">
       <Navbar />
       <section className="sign_up_form flex items-center justify-center min-h-screen">
-        <div className="left w-full max-w-md p-6 bg-blue-950/10 backdrop-blur-2xl shadow-md border border-neutral-600 rounded-2xl ">
+        <div className="left w-full max-w-md p-6 bg-[var(--bg-premium)]/20 backdrop-blur-2xl shadow-md border border-neutral-600 rounded-2xl ">
           <h2 className="text-2xl font-bold text-center mb-2">
             Hi there, ready to enjoy Creavpn?
           </h2>

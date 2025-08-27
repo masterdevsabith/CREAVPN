@@ -10,7 +10,7 @@ export default function PricingCard({
 }: PricingCardProps) {
   return (
     <div
-      className={`rounded-2xl bg-[#0d1525] text-white p-6 border  shadow-md ${className} ${
+      className={`rounded-2xl bg-[var(--bg-pricing)] text-white p-6 border  shadow-md ${className} ${
         isHighlighted
           ? "border-blue-500 hover:shadow-[0px_-1px_20px_-5px_#228be6] "
           : "border-white/10"

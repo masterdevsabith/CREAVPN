@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import Footer from "../components/includes/Footer";
 import Button from "../components/ui/Button";
+import LinkButton from "../components/ui/LinkButton";
 
 const achievements = [
   { label: "35M+", for: "App downloads" },
@@ -53,7 +54,7 @@ const quotations = [
 
 export default function AboutPage() {
   return (
-    <section className="about_page special_bg bg-[radial-gradient(ellipse_at_center,_#0B172F,_#0a0f1c)] ">
+    <section className="about_page ">
       <Navbar />
       <section className="about_hero flex flex-col items-center justify-center py-20">
         <div className="top mb-12 flex items-start justify-center">
@@ -94,7 +95,7 @@ export default function AboutPage() {
           <h2 className="max-w-4xl text-center text-5xl mb-4">
             Transparency & social responsibility
           </h2>
-          <p className="max-w-5xl text-center text-lg text-neutral-400 mb-8">
+          <p className="max-w-5xl text-center text-lg text-[var(--text-dim-color)] mb-8">
             Over the years, we&apos;ve put together various resources
             highlighting our operations, commitment to social responsibility,
             and our dedication to transparency. We&apos;ve also conducted
@@ -105,7 +106,7 @@ export default function AboutPage() {
           {infoCards.map((card, idx) => (
             <div
               key={idx}
-              className="infocard min-h-50 min-w-[500px] bg-neutral-200/10 hover:bg-neutral-200/14 backdrop-blur-lg p-5 rounded-md flex flex-col items-start justify-between"
+              className="infocard min-h-50 min-w-[500px] bg-[var(--bg-premium)]/50 hover:bg-neutral-200/14 backdrop-blur-lg p-5 rounded-md flex flex-col items-start justify-between"
             >
               <h3 className="text-xl font-semibold">{card.title}</h3>
               <p className="text-sm text-neutral-300 max-w-sm">
@@ -123,7 +124,7 @@ export default function AboutPage() {
           <h2 className="max-w-4xl text-center text-5xl mb-4">
             Our support for an open internet
           </h2>
-          <p className="max-w-5xl text-center text-lg text-neutral-400 mb-8">
+          <p className="max-w-5xl text-center text-lg text-[var(--text-dim-color)] mb-8">
             Free, open, and secure internet is the essence of our cause. That is
             why we proactively support the works of non-profit organizations
             that advocate for safeguarding online freedom and transparency.
@@ -133,7 +134,7 @@ export default function AboutPage() {
           {quotations.map((quotation, idx) => (
             <div
               key={idx}
-              className="quote_box relative bg-neutral-100/10 backdrop-blur-lg flex flex-col items-center p-5 rounded-md hover:shadow-xl/30"
+              className="quote_box relative bg-[var(--bg-premium)]/50 backdrop-blur-lg flex flex-col items-center p-5 rounded-md hover:shadow-xl/30"
             >
               <Image
                 src={quotation.image}
@@ -157,16 +158,17 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="join_our_team flex items-center justify-center mt-30 py-12">
-        <div className="container relative flex items-center justify-between  bg-blue-950/90 p-12 max-w-6xl rounded-2xl">
+        <div className="container relative flex items-center justify-between  bg-[var(--bg-premium)]/40 p-12 max-w-6xl rounded-2xl">
           <div className="left flex flex-col items-start justify-between">
             <h2 className="text-3xl font-semibold mb-2">Join our team</h2>
             <p className="text-md text-neutral-200 max-w-lg mb-6">
               Become a part of our mission to build the most beloved security
               products for everyone.
             </p>
-            <Button
+
+            <LinkButton
               content="Join Now"
-              className="text-black bg-white/20 hover:bg-white/26"
+              className="py-4 bg-[var(--bg-premium)] border-[var(--bg-premium)] bg-[radial-gradient(circle_at_center,_#111,_#333)]"
             />
           </div>
           <div className="right">

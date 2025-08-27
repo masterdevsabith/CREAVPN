@@ -71,7 +71,7 @@ export default function FAQ() {
                 className={`text-2xl ml-5 mb-2 transition-colors duration-300 ${
                   index === activeIndex
                     ? "text-[var(--text-dim-color)] font-semibold"
-                    : "text-[var(--text-premium)]"
+                    : "text-[#5c5c5c]"
                 }`}
               >
                 {item.text}

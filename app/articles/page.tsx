@@ -95,10 +95,10 @@ const blogs = [
 
 export default function ArticlesPage() {
   return (
-    <section className="special_bg bg-[radial-gradient(ellipse_at_center,_#0B172F,_#0a0f1c)] ">
+    <section className=" ">
       <Navbar />
       <section className="bottom flex flex-col items-center w-full justify-center h-full">
-        <section className="featured hover:cursor-pointer rounded-xl w-full max-w-[80%] flex items-stretch overflow-hidden bg-neutral-900/20 backdrop-blur-2xl border border-neutral-600">
+        <section className="featured hover:cursor-pointer rounded-xl w-full max-w-[80%] flex items-stretch overflow-hidden bg-[var(--bg-premium)]/20 backdrop-blur-2xl border border-neutral-600">
           {/* LEFT SIDE (Text) */}
           <div className="left flex flex-col justify-between p-10 w-2/3">
             <div className="top">
@@ -144,17 +144,17 @@ export default function ArticlesPage() {
         </section>
 
         <div className="mid mt-20 mb-5">
-          <div className="flex gap-8 bg-[#080c15] p-4 text-white rounded-2xl">
-            <button className="px-4 py-2 rounded-md bg-[#121c34] font-semibold">
+          <div className="flex gap-8 bg-[var(--bg-premium)]/20 p-4 text-white rounded-2xl">
+            <button className="px-4 py-2 rounded-md bg-[var(--bg-premium)]/40 font-semibold">
               All
             </button>
-            <button className="px-4 py-2 rounded-md hover:bg-[#121c34] transition">
+            <button className="px-4 py-2 rounded-md hover:bg-[var(--bg-premium)]/40 transition">
               Product
             </button>
-            <button className="px-4 py-2 rounded-md hover:bg-[#121c34] transition">
+            <button className="px-4 py-2 rounded-md hover:bg-[var(--bg-premium)]/40 transition">
               Engineering
             </button>
-            <button className="px-4 py-2 rounded-md hover:bg-[#121c34] transition">
+            <button className="px-4 py-2 rounded-md hover:bg-[var(--bg-premium)]/40 transition">
               Company
             </button>
           </div>
@@ -165,7 +165,7 @@ export default function ArticlesPage() {
               <div
                 // onClick={() => handleRedirect(blog.id)}
                 key={blog.id}
-                className="single_blog_item w-full flex flex-col justify-between items-start h-full bg-blue-500/10 backdrop-blur-lg text-neutral-200 rounded-xl hover:bg-blue-500/20 transition-all duration-200 cursor-pointer overflow-hidden shadow-lg"
+                className="single_blog_item w-full flex flex-col justify-between items-start h-full bg-[var(--bg-premium)]/40 backdrop-blur-lg text-neutral-200 rounded-xl hover:bg-[var(--bg-premium)]/20 transition-all duration-200 cursor-pointer overflow-hidden shadow-lg"
               >
                 <div className="wrapper w-full">
                   <div className="img w-full h-48 overflow-hidden rounded-t-xl">

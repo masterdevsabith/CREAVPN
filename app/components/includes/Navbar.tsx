@@ -12,6 +12,7 @@ const navlinks = [
   { label: "About Us", url: "/about" },
   { label: "Features", url: "#" },
   { label: "Our Missions", url: "#" },
+  { label: "Pricing", url: "/pricing" },
   { label: "Articles", url: "/articles" },
 ];
 
@@ -34,7 +35,7 @@ export default function Navbar() {
         <ul className="flex items-center gap-8">
           {navlinks.map((navlink, idx) => (
             <Link href={navlink.url} key={idx}>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2 text-[var(--text-dim-color)] hover:text-white">
                 {navlink.label}{" "}
                 {navlink.label == "Features" ? <ChevronDown /> : ""}
               </li>

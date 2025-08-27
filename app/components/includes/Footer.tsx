@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0f1a] text-white py-10 px-16">
+    <footer className=" text-white py-10 px-16">
       <div className="max-w-7xl mx-auto flex lg:items-start gap-8 lg:flex-row sm:flex-col sm:items-center">
         {/* Logo */}
         <div className="w-full flex lg:items-start flex-col sm:items-center lg:text-left sm:text-center">
@@ -73,7 +73,7 @@ export default function Footer() {
               <a
                 key={i}
                 href={s.link}
-                className="p-2 bg-gray-800 rounded-full hover:bg-gray-700"
+                className="p-2 bg-[var(--bg-premium)] rounded-full hover:bg-[var(--bg-premium-hover)]"
               >
                 <Icon size={18} />
               </a>

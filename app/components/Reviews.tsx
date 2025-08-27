@@ -126,7 +126,7 @@ const reviews2 = [
 
 export default function Reviews() {
   return (
-    <section className="reviews px-12 pt-18 pb-20 overflow-hidden">
+    <section className="reviews  pt-18 pb-20 overflow-hidden">
       <div className="top mb-16 text-center">
         <h3 className="text-4xl  text-center flex flex-col items-center ">
           Trusted by People around <br /> the world
@@ -135,7 +135,7 @@ export default function Reviews() {
           Join thousands of people who trust CreaVPN for their privacy needs.
         </p>
       </div>
-      <div className="bottom">
+      <div className="bottom relative px-12">
         <div className="absolute left-0 top-0 h-full w-60 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 h-full w-60 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
         <div className=" animate-scroll flex items-center space-x-8 px-24 mb-8">
