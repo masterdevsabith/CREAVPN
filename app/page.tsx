@@ -9,6 +9,7 @@ import Preview from "./components/Preview";
 import TrustedBy from "./components/TrustedBy";
 import Features from "./components/Features";
 import FAQ from "./components/FAQ";
+import Reviews from "./components/Reviews";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function Home() {
         <TrustedBy />
         <Features />
         <FAQ />
+        <Reviews />
       </section>
       <div
         className="chat_box fixed bottom-10 right-10 w-16 h-16 bg-[var(--bg-premium)] hover:bg-[var(--bg-premium-hover)] rounded-full flex items-center justify-center z-5"
