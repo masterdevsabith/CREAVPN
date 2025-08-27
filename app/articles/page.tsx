@@ -98,7 +98,7 @@ export default function ArticlesPage() {
     <section className=" ">
       <Navbar />
       <section className="bottom flex flex-col items-center w-full justify-center h-full">
-        <section className="featured hover:cursor-pointer rounded-xl w-full max-w-[80%] flex items-stretch overflow-hidden bg-[var(--bg-premium)]/20 backdrop-blur-2xl border border-neutral-600">
+        <section className="featured hover:cursor-pointer rounded-xl w-full max-w-[90%] lg:max-w-[80%] flex items-stretch overflow-hidden bg-[var(--bg-premium)]/20 backdrop-blur-2xl border border-neutral-600">
           {/* LEFT SIDE (Text) */}
           <div className="left flex flex-col justify-between p-10 w-2/3">
             <div className="top">
@@ -160,7 +160,7 @@ export default function ArticlesPage() {
           </div>
         </div>
         <section className="articles w-full flex items-center justify-center pb-20">
-          <div className="bottom max-w-[80%] mt-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+          <div className="bottom max-w-[90%] lg:max-w-[80%] mt-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
             {blogs.map((blog) => (
               <div
                 // onClick={() => handleRedirect(blog.id)}
