@@ -43,13 +43,13 @@ export default function PricingPage() {
   return (
     <>
       <Navbar />
-      <section className="pricing_page px-30 py-8">
+      <section className="pricing_page min-h-screen lg:h-[700px] px-5 xl:px-30 py-8 flex flex-col  justify-center">
         <div className="top mb-8 flex flex-col items-center text-center">
-          <h3 className="text-3xl font-semibold text-center flex flex-col items-center max-w-[40%] ">
+          <h3 className="text-3xl font-semibold text-center flex flex-col items-center max-w-[60%] xl:max-w-[40%] ">
             Kickstart your privacy journey by premium features
           </h3>
         </div>
-        <div className="bottom px-30 flex w-full items-center gap-5">
+        <div className="bottom sm:px-8 2xl:px-30 flex w-full items-center flex-col lg:flex-row gap-5">
           {pricingPlans.map((pricingplan, idx) => (
             <PricingCard
               key={idx}
