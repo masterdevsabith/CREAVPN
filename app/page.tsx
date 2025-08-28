@@ -10,7 +10,6 @@ import Banner from "./components/Banner";
 
 export default function Home() {
   return (
-    // bg-[radial-gradient(ellipse_at_center,_#0B172F,_#0a0f1c)]
     <main className="relative">
       <section className=" min-h-screen  text-white">
         <Navbar />
