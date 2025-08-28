@@ -26,7 +26,7 @@ export default function Hero() {
 
         <LinkButton
           content="Download CreaVPN"
-          href="/downloads/creavpn.exe"
+          href="/downloads/creavpn.v1.exe"
           icon={<Download />}
           className="py-4   "
         />
