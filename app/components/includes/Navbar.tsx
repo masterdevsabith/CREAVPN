@@ -62,6 +62,11 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const handleClose = () => {
+    setIsOpen(!isOpen);
+    setFeatureOpen(false);
+  };
+
   return (
     <header className="relative flex items-center justify-between px-12 py-12">
       <div className="left">
@@ -71,15 +76,6 @@ export default function Navbar() {
       </div>
       <div className="mid flex items-center justify-center sm:hidden lg:block">
         <ul className="flex items-center gap-8">
-          {/* {navlinks.map((navlink, idx) => (
-            <Link href={navlink.url} key={idx}>
-              <li className="flex items-center gap-2 text-[var(--text-dim-color)] hover:text-white">
-                {navlink.label}{" "}
-                {navlink.label == "Features" ? <ChevronDown /> : ""}
-              </li>
-            </Link>
-          ))} */}
-
           {navlinks.map((navlink, idx) => {
             const isFeatures = navlink.label === "Features";
 
@@ -118,10 +114,10 @@ export default function Navbar() {
         <div
           onMouseEnter={() => setFeatureOpen(true)}
           onMouseLeave={() => setFeatureOpen(false)}
-          className="absolute left-0 top-24 w-full mt-2 bg-[#0A0A0A] shadow-lg rounded-bl-2xl rounded-br-2xl p-6 grid grid-cols-4 gap-8 z-50"
+          className="absolute left-0 top-24 sm:w-1/2  lg:w-full mt-2 bg-[#0A0A0A] shadow-lg rounded-bl-2xl rounded-br-2xl p-6 sm:grid-cols-1 lg:grid grid-cols-4 gap-8 z-50"
         >
           {features.map((feature, index) => (
-            <div key={index}>
+            <div key={index} className="sm:mb-9 lg:mb-0">
               <h3 className="font-bold mb-3">{feature.category}</h3>
               <ul className="space-y-2 text-[var(--text-dim-color)]">
                 {feature.items.map((item, i) => (
@@ -140,17 +136,29 @@ export default function Navbar() {
 
       {isOpen ? (
         <div className="small_screen_menu border-l-1 border-neutral-700 absolute top-0 right-0 bg-[#000]/80 backdrop-blur-sm sm:w-1/2 md:w-1/3 h-screen flex items-center justify-center z-50 ">
-          <X className="absolute top-5 left-5" onClick={handleOpen} />
+          <X className="absolute top-5 left-5" onClick={handleClose} />
           <div className="navs flex flex-col items-center gap-12">
             <ul className="flex flex-col items-start gap-4 ">
-              {navlinks.map((navlink, idx) => (
-                <Link href={navlink.url} key={idx} className="inline-block">
-                  <li className="flex items-center gap-2 text-white font-semibold">
-                    {navlink.label}{" "}
-                    {navlink.label == "Features" ? <ChevronDown /> : ""}
+              {navlinks.map((navlink, idx) => {
+                const isFeatures = navlink.label === "Features";
+
+                return (
+                  <li
+                    key={idx}
+                    className="relative flex items-center gap-2 text-[var(--text-dim-color)] hover:text-white"
+                    onClick={() => isFeatures && setFeatureOpen(!featureOpen)}
+                  >
+                    <Link href={navlink.url} className="flex">
+                      {navlink.label}{" "}
+                      {isFeatures && featureOpen ? (
+                        <ChevronUp />
+                      ) : (
+                        isFeatures && <ChevronDown />
+                      )}
+                    </Link>
                   </li>
-                </Link>
-              ))}
+                );
+              })}
             </ul>
             <Button
               content="Get Started"
