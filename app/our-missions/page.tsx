@@ -82,8 +82,8 @@ export default function OurMissionsPage() {
           Making impeccable security and privacy affordable since 2013
         </p>
       </div>
-      <div className="first flex items-center justify-center px-20">
-        <div className="left flex items-center justify-end h-full w-1/2 p-12">
+      <div className="first flex flex-col xl:flex-row items-center justify-center px-20">
+        <div className="left flex items-center justify-center  xl:justify-end h-full w-full xl:w-1/2 p-12">
           <Image
             src={"/missions/1.png"}
             alt="series one"
@@ -92,7 +92,7 @@ export default function OurMissionsPage() {
             className="rounded-lg"
           />
         </div>
-        <div className="right w-1/2 p-12">
+        <div className="right w-full xl:w-1/2 p-12">
           {misson1.map((item, index) => (
             <div key={index} className="mb-6">
               <h2 className="text-xl font-bold mb-2">{item.title}</h2>
@@ -117,8 +117,8 @@ export default function OurMissionsPage() {
           ))}
         </div>
       </div>
-      <div className="second flex items-center justify-center px-20">
-        <div className="left w-1/2 p-12">
+      <div className="second flex items-center flex-col xl:flex-row justify-center px-20">
+        <div className="left w-full xl:w-1/2 p-12">
           {historyContent.map((item, index) => (
             <div key={index}>
               <h2 className="text-xl font-bold mb-4">{item.title}</h2>
@@ -136,7 +136,7 @@ export default function OurMissionsPage() {
           ))}
         </div>
 
-        <div className="right flex items-center justify-end h-full w-1/2 p-12">
+        <div className="right flex items-center justify-center xl:justify-end h-full w-full xl:w-1/2 p-12">
           <Image
             src={"/missions/2.png"}
             alt="series one"
