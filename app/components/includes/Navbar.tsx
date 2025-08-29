@@ -11,7 +11,7 @@ import { useState } from "react";
 const navlinks = [
   { label: "About Us", url: "/about" },
   { label: "Features", url: "#" },
-  { label: "Our Missions", url: "#" },
+  { label: "Our Missions", url: "/our-missions" },
   { label: "Pricing", url: "/pricing" },
   { label: "Articles", url: "/articles" },
 ];
