@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navbar from "../components/includes/Navbar";
+import Footer from "../components/includes/Footer";
 
 const misson1 = [
   {
@@ -81,7 +82,7 @@ export default function OurMissionsPage() {
           Making impeccable security and privacy affordable since 2013
         </p>
       </div>
-      <div className="first flex items-center justify-center ">
+      <div className="first flex items-center justify-center px-20">
         <div className="left flex items-center justify-end h-full w-1/2 p-12">
           <Image
             src={"/missions/1.png"}
@@ -95,11 +96,18 @@ export default function OurMissionsPage() {
           {misson1.map((item, index) => (
             <div key={index} className="mb-6">
               <h2 className="text-xl font-bold mb-2">{item.title}</h2>
-              {item.text && <p className="text-base">{item.text}</p>}
+              {item.text && (
+                <p className="text-base text-[var(--text-dim-color)]">
+                  {item.text}
+                </p>
+              )}
               {item.values && (
                 <ul className="list-disc ml-6 space-y-2">
                   {item.values.map((val, i) => (
-                    <li key={i} className="text-base">
+                    <li
+                      key={i}
+                      className="text-base text-[var(--text-dim-color)]"
+                    >
                       {val}
                     </li>
                   ))}
@@ -109,8 +117,8 @@ export default function OurMissionsPage() {
           ))}
         </div>
       </div>
-      <div className="second flex items-center justify-center">
-        <div className="left p-6">
+      <div className="second flex items-center justify-center px-20">
+        <div className="left w-1/2 p-12">
           {historyContent.map((item, index) => (
             <div key={index}>
               <h2 className="text-xl font-bold mb-4">{item.title}</h2>
@@ -119,13 +127,26 @@ export default function OurMissionsPage() {
                   <h3 className="text-lg font-semibold mb-2">
                     {section.subtitle}
                   </h3>
-                  <p className="text-base">{section.text}</p>
+                  <p className="text-base text-[var(--text-dim-color)]">
+                    {section.text}
+                  </p>
                 </div>
               ))}
             </div>
           ))}
         </div>
+
+        <div className="right flex items-center justify-end h-full w-1/2 p-12">
+          <Image
+            src={"/missions/2.png"}
+            alt="series one"
+            width={500}
+            height={500}
+            className="rounded-lg"
+          />
+        </div>
       </div>
+      <Footer />
     </section>
   );
 }
