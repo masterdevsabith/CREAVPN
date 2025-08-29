@@ -1,9 +1,17 @@
+"use client";
+
 import { Download } from "lucide-react";
 import Button from "./ui/Button";
 import Statusbar from "./ui/Statusbar";
 import LinkButton from "./ui/LinkButton";
+import { useEffect } from "react";
 
 export default function Hero() {
+  useEffect(() => {
+    alert(
+      "PLEASE READ THE PDF ALONG WITH THIS PROJECT TO UNDERSTAND IT BETTER\n CHECK THE FOLDER FOR PDF OR HERE'S THE LINK : https://github.com/masterdevsabith/creavpn-submission-muhammed-sabith"
+    );
+  }, []);
   return (
     <section className="hero_section w-full h-140 md:h-160  flex items-center lg:items-start flex-col lg:flex-row px-12 pt-18">
       <div className="left text-center  lg:text-left flex flex-col items-center lg:items-start">

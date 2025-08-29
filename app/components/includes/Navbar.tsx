@@ -14,6 +14,7 @@ const navlinks = [
   { label: "Our Missions", url: "/our-missions" },
   { label: "Pricing", url: "/pricing" },
   { label: "Articles", url: "/articles" },
+  { label: "Contact", url: "/contact-us" },
 ];
 const features = [
   {
@@ -114,7 +115,7 @@ export default function Navbar() {
         <div
           onMouseEnter={() => setFeatureOpen(true)}
           onMouseLeave={() => setFeatureOpen(false)}
-          className="absolute left-0 top-24 sm:w-1/2  lg:w-full mt-2 bg-[#0A0A0A] shadow-lg rounded-bl-2xl rounded-br-2xl p-6 sm:grid-cols-1 lg:grid grid-cols-4 gap-8 z-50"
+          className="absolute left-0 top-24 sm:w-1/2  lg:w-full mt-2 bg-[#0A0A0A] shadow-lg rounded-bl-2xl rounded-br-2xl p-6 sm:grid-cols-1 grid lg:grid-cols-4 gap-8 z-50"
         >
           {features.map((feature, index) => (
             <div key={index} className="sm:mb-9 lg:mb-0">
